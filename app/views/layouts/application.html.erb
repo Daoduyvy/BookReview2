@@ -15,9 +15,9 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+     <div class="container">
     <nav class="navbar navbar-default">
-      <div class="container">
+     
         <div class= "navbar-header">
             <%= link_to "BookReview2" , root_path, class:"navbar-brand" %>
         </div>    
@@ -29,10 +29,13 @@
             <li><%= link_to "Log In", new_user_session_path %></li> 
             <% end %>
         </ul>
-      </div>
-    </nav>  
+      
+    </nav> 
+      <%= yield %> 
+    </div>
 
-
-    <%= yield %>
+    
+       
+  
   </body>
 </html>
