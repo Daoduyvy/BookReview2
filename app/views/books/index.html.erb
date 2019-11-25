@@ -1,5 +1,20 @@
 <% @books.each do |book| %>
-	<h2><%= link_to book.title , book_path(book)%></h2>
+	<div id = "title"><%= link_to book.title , book_path(book)%></div>
 
 <% end %>
-<%= link_to "Add Book" , new_book_path %>
+<div>
+   <ul class="pager">
+      <li class="previous <%= @page == 0 ? 'disabled' : '' %>">
+          <%= link_to_if @page > 0, "<< Previous", books_path(page: @page - 1) %>
+      </li>
+
+      <li class="next">
+          <%= link_to "Next >>", books_path(page: @page + 1) %>
+      </li>
+   </ul>
+</div>
+
+<%= link_to "Add Book" , new_book_path(page: 1) %>
+
+
+
