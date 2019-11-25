@@ -1,10 +1,10 @@
-<h1>Edit Book</h1>
+    <h1>Edit Book</h1>
 
-<%= simple_form_for @book,:html => { :multipart => true } do |f| %>
-  <%= f.select :category, @categories  %>
-  <%= f.input :title %>
-  <%= f.input :publish_date %>
-  <%= f.input :author %>
-  <%= f.button :submit %>
-<% end %>
-	
+    <%= simple_form_for @book,:html => { :multipart => true } do |f| %>
+      <%= f.select :category, @categories  %>
+      <%= f.input :title %>
+      <%= f.input :publish_date %>
+      <%= f.input :author %>
+      <%= f.button :submit %>
+    <% end %>
+        

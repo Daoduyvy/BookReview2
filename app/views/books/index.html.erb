@@ -1,20 +1,22 @@
-<% @books.each do |book| %>
-	<div id = "title"><%= link_to book.title , book_path(book)%></div>
-
-<% end %>
-<div>
-   <ul class="pager">
-      <li class="previous <%= @page == 0 ? 'disabled' : '' %>">
-          <%= link_to_if @page > 0, "<< Previous", books_path(page: @page - 1) %>
-      </li>
-
-      <li class="next">
-          <%= link_to "Next >>", books_path(page: @page + 1) %>
-      </li>
-   </ul>
-</div>
-
-<%= link_to "Add Book" , new_book_path(page: 1) %>
+    <%= form_tag(books_path, method: :get) do %>
+      <%= text_field_tag :term, params[:term] %>
+      <%= submit_tag 'Search' %>
+    <% end %>
 
 
+    <% @books.each do |book| %>
+        <div id = "title"><%= link_to book.title , book_path(book)%></div>
+
+    <% end %>
+    <div>
+       <ul class="pager">
+          <li class="previous <%= @page == 0 ? 'disabled' : '' %>">
+              <%= link_to_if @page > 0, "<< Previous", books_path(page: @page - 1) %>
+          </li>
+
+          <li class="next">
+              <%= link_to "Next >>", books_path(page: @page + 1) %>
+          </li>
+       </ul>
+    </div>
 
