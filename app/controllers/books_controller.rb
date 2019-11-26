@@ -1,15 +1,23 @@
 class BooksController < ApplicationController
 
   before_action :find_book, only: [:show,:edit,:update,:destroy]
-
+  BOOK_SIZE = 2
   def index
-    @books = Book.all.order(created_at: :desc)
+    @page = (params[:page] || 0 ).to_i
+    @books = if params[:term]
+      Book.where('title LIKE ?', "%#{params[:term]}%")
+     else
+    
+    Book.offset(BOOK_SIZE*@page).limit(BOOK_SIZE)
+    end
+
   end
 
   def new
-    @book = Book.new
-  end
-
+    @book = current_user.books.build
+    @categories = Category.all.map{| c | [c.name, c.id] }
+  end  
+ 
   def show
     
   end
@@ -23,7 +31,9 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.build(book_params)
+    @book.category_id = params[:category_id]
+    
     if @book.save
       redirect_to root_path
     else
@@ -31,9 +41,11 @@ class BooksController < ApplicationController
     end
   end
 
+
+ 
   private 
     def book_params
-      params.require(:book).permit(:title,:publish_date,:author)
+      params.require(:book).permit(:title,:publish_date,:author,:category_id)
     end
     def find_book
       @book = Book.find(params[:id])
