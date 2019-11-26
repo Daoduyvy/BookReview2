@@ -16,9 +16,9 @@ class BooksController < ApplicationController
   def new
     @book = current_user.books.build
     @categories = Category.all.map{| c | [c.name, c.id] }
-  end
-
-  def show
+  end  
+ 
+   def show
     
   end
 
@@ -37,6 +37,11 @@ class BooksController < ApplicationController
       redirect_to root_path
     else
       render :new
+    @book = Book.new(book_params)
+    if @book.save
+      redirect_to root_path
+    else
+      render :new  
     end
   end
 
@@ -47,4 +52,5 @@ class BooksController < ApplicationController
     def find_book
       @book = Book.find(params[:id])
     end
+end
 end
