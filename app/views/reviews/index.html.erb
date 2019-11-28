@@ -1,0 +1,14 @@
+<% @reviews.each do |review| %>
+	<h3><%= review.rating %></h3>
+	<% end %>
+	<div>
+	<ul class="pager" style="margin-top: 30%" >
+	<li class="previous <%= @page ==  0? 'disabled' : '' %>">
+	<%= link_to_if @page > 1, "<< Previous", book_reviews_path(page: @page - 1) %>
+	</li>
+
+	<li class="next">
+	<%= link_to "Next >>", book_reviews_path(page: @page + 1) %>
+	</li>
+	</ul>
+	</div>

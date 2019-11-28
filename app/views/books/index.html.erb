@@ -1,22 +1,25 @@
     <%= form_tag(books_path, method: :get) do %>
-      <%= text_field_tag :term, params[:term] %>
-      <%= submit_tag 'Search' %>
+    <%= text_field_tag :term, params[:term] %>
+    <%= submit_tag 'Search' %>
     <% end %>
-
+    <h1 class="current-category"><%= params[:category] %></h1>
 
     <% @books.each do |book| %>
-        <div id = "title"><%= link_to book.title , book_path(book)%></div>
-
+    <div class="col-md-3">
+        <a href="/books/<%= book.id %>">
+           <%= image_tag book.book_img.url(:book_index)%>
+       </a>
+    </div>	
     <% end %>
     <div>
-       <ul class="pager">
-          <li class="previous <%= @page == 0 ? 'disabled' : '' %>">
-              <%= link_to_if @page > 0, "<< Previous", books_path(page: @page - 1) %>
-          </li>
+     <ul class="pager" style="margin-top: 30%" >
+      <li class="previous <%= @page ==  0? 'disabled' : '' %>">
+          <%= link_to_if @page > 1, "<< Previous", books_path(page: @page - 1) %>
+      </li>
 
-          <li class="next">
-              <%= link_to "Next >>", books_path(page: @page + 1) %>
-          </li>
-       </ul>
+      <li class="next">
+          <%= link_to "Next >>", books_path(page: @page + 1) %>
+      </li>
+     </ul>
     </div>
 
