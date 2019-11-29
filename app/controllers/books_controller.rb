@@ -2,15 +2,11 @@ class BooksController < ApplicationController
 
   before_action :find_book, only: [:show,:edit,:update,:destroy]
   
-  BOOK_SIZE = 2
+  PER_PAGE = 2
   def index
     @page = (params[:page] || 1 ).to_i
-    @books = if params[:term]
-      Book.where('title LIKE ?', "%#{params[:term]}%").offset(BOOK_SIZE*@page-1).limit(BOOK_SIZE)
-    else
-      Book.offset(BOOK_SIZE*@page).limit(BOOK_SIZE)
-    end
-
+    @books = Book.paginate_book(PER_PAGE, @page)
+    @books = @books.search_title(params[:term]).paginate_book(PER_PAGE, @page)  if params[:term].present?
   end
 
   def new
