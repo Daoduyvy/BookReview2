@@ -1,18 +1,18 @@
 class ReviewsController < ApplicationController
   before_action :find_book
   before_action :find_review, only: [:edit, :update, :destroy,:show]
-  REVIEW_SIZE = 2
+  PER_PAGE = 2
 def new
-   @review = Review.new
+   @review = @book.reviews.build
  end
 
 def index
   @page = (params[:page] || 1 ).to_i
-  @reviews =  Review.offset(REVIEW_SIZE*@page).limit(REVIEW_SIZE)
+  @reviews = Review.paginate_review(PER_PAGE,@page)
 end
 
 def create
-  @review = Review.new(review_params)
+  @review = @book.reviews.build(review_params)
   @review.book_id = @book.id
   @review.user_id = current_user.id
   if @review.save
