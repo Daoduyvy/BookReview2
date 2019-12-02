@@ -11,8 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
  *= require zoom.css
+ *= require books.scss
  */
-.description {
-	font-size: 15px;
-	float: right;
+
+.book {
+    height: 250px;
+    width: 350px;
 }

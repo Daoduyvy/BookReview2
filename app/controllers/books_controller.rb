@@ -1,17 +1,17 @@
+# frozen_string_literal: true
+
 class BooksController < ApplicationController
-
-  before_action :find_book, only: [:show,:edit,:update,:destroy]
-
-  PER_PAGE = 2
+  before_action :find_book, only: %i[show edit update destroy]
+  PER_PAGE = 6
   def index
-    @page = (params[:page] || 1 ).to_i
-    @books = Book.paginate_book(PER_PAGE, @page)
-    @books = @books.search_title(params[:term]).paginate_book(PER_PAGE, @page)  if params[:term].present?
+    @page = (params[:page] || 1).to_i
+    @books = Book.paginates(PER_PAGE, @page)
+    @books = @books.search_title(params[:term]).paginates(PER_PAGE, @page) if params[:term].present?
   end
 
   def new
     @book = current_user.books.build
-    @categories = Category.all.map {| c | [c.name, c.id] }
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def show
@@ -26,9 +26,11 @@ class BooksController < ApplicationController
       render :edit
     end
   end
+
   def edit
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
+
   def create
     @book = current_user.books.build(book_params)
     @book.category_id = params[:category_id]
@@ -40,12 +42,19 @@ class BooksController < ApplicationController
     end
   end
 
-
+  def destroy
+    @book.reviews.destroy_all
+    @book.destroy
+    redirect_to root_path
+  end
 
   private
+
   def book_params
-    params.require(:book).permit(:title,:publish_date,:author,:category_id, :book_img,:description)
+    params.require(:book).permit(:title, :publish_date, :author, :category_id,
+                                 :book_img, :description)
   end
+
   def find_book
     @book = Book.find(params[:id])
   end

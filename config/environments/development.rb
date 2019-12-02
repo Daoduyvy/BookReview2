@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  Paperclip.options[:command_path] = "/usr/local/bin"
+  Paperclip.options[:command_path] = '/usr/local/bin'
   Paperclip.options[:whiny_thumbnails] = true
   Paperclip.options[:log] = true
   # In the development environment your application's code is reloaded on

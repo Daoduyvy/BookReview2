@@ -1,16 +1,17 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   resources :categories
   resources :users do
     member do
-      get :following , :followers
+      get :following, :followers
     end
   end
   resources :books do
-	  resources :reviews
+    resources :reviews
   end
-  resources :relationships,only: [:create, :destroy]
+  resources :follows, only: %i[create destroy]
   root 'books#index'
 end

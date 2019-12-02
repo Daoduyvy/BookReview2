@@ -1,11 +1,11 @@
     <div class = "col-md-4" style="margin-top: 2%" >
         <%= image_tag @book.book_img.url(:book_index),'data-action': "zoom"%>
         <h2 class=""><%= @book.title %></h2>
-        <h3><%= @book.publish_date %></h3>
-        <h3><%= @book.author %></h3>
-        <h3><%= @book.category.name %></h3>
-        <%= link_to "Edit Book" , edit_book_path(@book) %>
-        <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you ok?"} %>
+    <h3><%= @book.publish_date %></h3>
+    <h3><%= @book.author %></h3>
+    <h3><%= @book.category.name %></h3>
+    <%= link_to "Edit Book" , edit_book_path(@book) %>
+    <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you ok?"} %>
     </div>
 
     <div class="row">
