@@ -1,4 +1,4 @@
-class Book < ActiveRecord::Base
+class Book < BaseModel
   belongs_to :user
   belongs_to :category
   has_many :reviews
@@ -6,7 +6,6 @@ class Book < ActiveRecord::Base
   					:path => ":rails_root/public/uploadfile/:id/:style/:filename",
   					:url => "/uploadfile/:id/:style/:filename"
   validates_attachment_content_type :book_img, :content_type => /^image\/(png|gif|jpeg)/
- 
+
   scope :search_title, -> (title) { where('title like ?', "%#{title}%")}
-  scope :paginate_book, -> (per_page, page) { offset(per_page*(page-1)).limit(per_page) }
 end
