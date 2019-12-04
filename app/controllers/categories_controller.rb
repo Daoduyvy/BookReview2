@@ -19,16 +19,12 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def show
+  def show; end
 
-  end
-
-  def edit
-
-  end
+  def edit; end
 
   def update
-    return unless @category.update(category_params)
+    if @category.update(category_params)
       redirect_to book_path(@book)
     end
   end

@@ -1,21 +1,52 @@
+        <div >
+          <%= form_tag(books_path, method: :get) do  %>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="input-group" id="adv-search">
+                <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search by title"%>
+                <div class="input-group-btn">
+                  <div class="btn-group" role="group">
+                    <div class="dropdown dropdown-lg">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                      <div class="dropdown-menu dropdown-menu-right" role="menu">
 
-    <h1 class="current-category"><%= params[:category] %></h1>
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            <%= label_tag :category %>
+                            <%= select_tag :category, options_for_select(@categories) , class: "form-control"  %>
+                          </div>
+                          <div class="form-group">
+                            <label for="contain">Title</label>
+                            <input class="form-control" type="text" />
+                          </div>
+                          <div class="form-group">
+                            <label for="contain">Author</label>
+                            <input class="form-control" type="text" />
+                          </div>
+                          <button type="submit" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                    <%= submit_tag 'Search', class: "btn btn-primary"  %>
+                    <!-- <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <div style="padding-top:20px;">
+          <% @books.each do |book| %>
+          <div class="col-md-3" id="book" style="height:250px;width:350px;">
+            <a href="/books/<%= book.id %>">
+              <%= image_tag book.book_img.url(:book_index)%>
+            </a>
 
-    <% @books.each do |book| %>
-    <div class="col-md-3" id="book" style="height:250px;width:350px;">
-        <a href="/books/<%= book.id %>">
-            <%= image_tag book.book_img.url(:book_index)%>
-        </a>
-    </div>
-    <% end %>
-    <div>
-        <ul class="pager" style="margin-top: 46%" >
-            <li class="previous <%= @page ==  0? 'disabled' : '' %>">
-                <%= link_to_if @page > 1, "<< Previous", books_path(page: @page - 1) %>
-            </li>
-
-            <li class="next">
-                <%= link_to "Next >>", books_path(page: @page + 1) %>
-            </li>
-        </ul>
-    </div>
+          </div>
+          <% end %>
+        </div>
+        <%= will_paginate @posts %>
+      </div>
