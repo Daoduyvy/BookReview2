@@ -2,14 +2,15 @@
 
 class BooksController < ApplicationController
   before_action :find_book, only: %i[show edit update destroy]
-  PER_PAGE = 6
+  WillPaginate.per_page = 6
   def index
     @page = (params[:page] || 1).to_i
-    @books = Book.paginates(PER_PAGE, @page)
-    @books = @books.search_title(params[:term]).paginates(PER_PAGE, @page) if params[:term].present?
+    @books = Book.paginate(page: params[:page], per_page: 6).order(created_at: :desc)
+    @books = @books.search_title(params[:term]).paginate(page: params[:page], per_page: 6) if params[:term].present?
+    @categories = Category.pluck(:name, :id)
   end
 
-  def new
+def new
     @book = current_user.books.build
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
