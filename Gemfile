@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+ruby '2.6.0'
 
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'
@@ -21,10 +21,10 @@ gem 'parser', '~> 2.6', '>= 2.6.5.0'
 gem 'rubocop', require: false
 gem 'simple_form', '~> 5.0', '>= 5.0.1'
 gem 'turbolinks', '~> 5'
-gem 'will_paginate', '~> 3.2', '>= 3.2.1'
+gem 'will_paginate' 
 gem "font-awesome-rails"
-gem 'will_paginate', '~> 3.2', '>= 3.2.1'
-# gem 'redis', '~> 4.0'
+gem 'carrierwave'
+# gem 'redis', '~> 4.0' q
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant

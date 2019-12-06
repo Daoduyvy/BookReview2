@@ -66,13 +66,6 @@ ActiveRecord::Schema.define(version: 2019_12_04_065836) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
-    t.integer "following_id"
-    t.integer "followed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
