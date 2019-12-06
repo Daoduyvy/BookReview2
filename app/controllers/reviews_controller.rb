@@ -3,14 +3,14 @@
 class ReviewsController < ApplicationController
   before_action :find_book
   before_action :find_review, only: %i[edit update destroy show]
-  PER_PAGE = 2
+  WillPaginate.per_page = 2
   def new
     @review = @book.reviews.build
   end
 
   def index
     @page = (params[:page] || 1).to_i
-    @reviews = Review.paginates(PER_PAGE, @page)
+    @reviews = @book.reviews.paginate(page: params[:page], per_page: 2).order(created_at: :desc)
   end
 
   def create

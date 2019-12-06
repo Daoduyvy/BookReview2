@@ -8,4 +8,5 @@ class Book < BaseModel
   validates_attachment_content_type :book_img, :content_type => /^image\/(png|gif|jpeg)/
 
   scope :search_title, -> (title) { where('title like ?', "%#{title}%")}
+  scope :search_category , -> (category_id) { where('category_id like ?' , "%#{category_id}%")}
 end

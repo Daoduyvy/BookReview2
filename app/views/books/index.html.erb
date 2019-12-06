@@ -1,52 +1,33 @@
-        <div >
-          <%= form_tag(books_path, method: :get) do  %>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="input-group" id="adv-search">
-                <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search by title"%>
-                <div class="input-group-btn">
-                  <div class="btn-group" role="group">
-                    <div class="dropdown dropdown-lg">
-                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                      <div class="dropdown-menu dropdown-menu-right" role="menu">
-
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            <%= label_tag :category %>
-                            <%= select_tag :category, options_for_select(@categories) , class: "form-control"  %>
-                          </div>
-                          <div class="form-group">
-                            <label for="contain">Title</label>
-                            <input class="form-control" type="text" />
-                          </div>
-                          <div class="form-group">
-                            <label for="contain">Author</label>
-                            <input class="form-control" type="text" />
-                          </div>
-                          <button type="submit" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                          </button>
-                        </form>
-                      </div>
-                    </div>
-                    <%= submit_tag 'Search', class: "btn btn-primary"  %>
-                    <!-- <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button> -->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
-        <div style="padding-top:20px;">
-          <% @books.each do |book| %>
-          <div class="col-md-3" id="book" style="height:250px;width:350px;">
-            <a href="/books/<%= book.id %>">
-              <%= image_tag book.book_img.url(:book_index)%>
-            </a>
-
-          </div>
-          <% end %>
-        </div>
-        <%= will_paginate @posts %>
-      </div>
+		
+	<div class="container">
+		<div class="col-md-12">
+			<%= form_tag(books_path, method: :get) do  %>
+				<div class="col-md-6" id="adv-search">
+					<%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search by title",autocomplate: 'off' %>
+				</div>
+				<div class="col-md-4">
+					<div class="button-group" style = "padding-left:10%">
+						<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"> Category</span> <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<% @categories.each do |category| %>
+								<li > <%= check_box_tag 'category_id[]', category[1], false, :id => category[1] , autocomplate: 'off' %><span><%= label_tag category[0]%></span> </li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-1" style = "padding-left:3%">
+					<%= submit_tag 'Search', class: "btn btn-primary"  %>
+				</div>
+			</div>
+		<% end %>
+		<div style="padding-top:50px;">
+			<% @books.each do |book| %>
+				<div class="col-md-3" id="book" style="height:250px;width:350px;">
+					<a href="/books/<%= book.id %>">
+						<%= image_tag book.book_img.url(:book_index)%>
+					</a>
+				</div>
+			<% end %>
+		</div>
+		<%= will_paginate @posts  , style: "color:red ;font-size:20px; "%>
+	</div>
