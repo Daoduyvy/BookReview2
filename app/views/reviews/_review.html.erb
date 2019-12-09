@@ -1,2 +1,9 @@
-	<p><%= @review.rating %></p>
-	<p><%= @review.comment %></p>
+<h2>Comment</h2>
+
+<% @reviews.each do |r| %>
+   <p> Rating :  <%= r.rating %></p>
+    <p> Comment : <%= r.comment %></p>
+	<%= link_to "Edit Review" , edit_book_review_path(@book,r.id) %>
+<% end %>
+
+<p><%= will_paginate @reviews if @reviews.present? %></p>
