@@ -2,7 +2,7 @@
 
 class BooksController < ApplicationController
   before_action :find_book, only: %i[show edit update destroy]
-  WillPaginate.per_page = 1
+  WillPaginate.per_page = 3
 
   def index
     @page = (params[:page] || 0).to_i
@@ -19,7 +19,14 @@ class BooksController < ApplicationController
   end
 
   def show
-    @reviews = @book.reviews.paginate(page: params[:page]).order(created_at: :desc)
+    @users = User.all.order(created_at: :desc)
+    @reviews = @book.reviews.page(params[:page]).per(3).order(created_at: :desc)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json {render :json => @review}
+      format.js
+      format.xml
+   end
   end
 
   def update
@@ -43,6 +50,15 @@ class BooksController < ApplicationController
     else
       @categories = Category.all.map { |c| [c.name, c.id] }
       render :new
+    end
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to(book_path(@book)) }
+        format.js
+      else
+        format.html { redirect_back(fallback_location: root_path) }
+        format.js
+      end
     end
   end
 
