@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.order(created_at: :desc)
+    @users = User.all.order(created_at: :desc) 
+    @current_user = User.find_by_id(session[:current_user_id])
   end
 
   def edit; end

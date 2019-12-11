@@ -1,0 +1,18 @@
+  <% if !@reviews.nil? && @reviews.size > 0 %>
+    <% @reviews.each do |review| %>
+      <p><%= review.user.email %></p>
+      <div class="admin-review-rating" data-score="<%= review.rating %>"></div>
+      <p> Comment : <%= review.comment %></p>
+      <% if current_user.email == review.user.email  %>
+        <%= link_to "Edit Review" , edit_admin_book_review_path(@book,review.id) %>
+        <%= link_to "Delete" , admin_book_review_path(review.book_id, review ) , method: :delete , :onclick=> "return confirm('Are you sure you want to delete this item?')"  %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <script>
+    $('.admin-review-rating').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    });
+    $('.admin-review-rating').raty('reload');
+  </script>

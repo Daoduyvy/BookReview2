@@ -2,7 +2,7 @@
 
 class BooksController < ApplicationController
   before_action :find_book, only: %i[show edit update destroy]
-  WillPaginate.per_page = 1
+  WillPaginate.per_page = 3
 
   def index
     @page = (params[:page] || 0).to_i
@@ -11,6 +11,7 @@ class BooksController < ApplicationController
       @books = @books.search_title(params[:term]).where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 6)
     end
     @categories = Category.pluck(:name, :id)
+    
   end
 
   def new
@@ -19,15 +20,32 @@ class BooksController < ApplicationController
   end
 
   def show
-    @reviews = @book.reviews.paginate(page: params[:page]).order(created_at: :desc)
+    @users = User.all.order(created_at: :desc)
+    @reviews = @book.reviews.page(params[:page]).per(3).order(created_at: :desc)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @review }
+      format.js
+      format.xml
+    end
   end
 
   def update
-    if @book.update(book_params)
-      redirect_to book_path(@book)
-    else
-      @categories = Category.all.map { |c| [c.name, c.id] }
-      render :edit
+    # if @book.update(book_params)
+    #   redirect_to book_path(@book)
+    # else
+    #   @categories = Category.all.map { |c| [c.name, c.id] }
+    #   render :edit
+    # end
+    respond_to do |format|
+      if @book.update(book_params)
+        format.json { head :no_content }
+        format.js
+      else
+        format.json { render json: @book.errors.full_messages,
+                                   status: :unprocessable_entity }
+      end
+     
     end
   end
 
@@ -43,6 +61,16 @@ class BooksController < ApplicationController
     else
       @categories = Category.all.map { |c| [c.name, c.id] }
       render :new
+    end
+    respond_to do |format|
+      if @book.save
+        format.json { head :no_content }
+        format.js
+      else
+        format.json { render json: @book.errors.full_messages, 
+                            status: :unprocessable_entity }
+      end
+      
     end
   end
 

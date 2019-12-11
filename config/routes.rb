@@ -2,10 +2,17 @@
 
 Rails.application.routes.draw do
   devise_for :admins
-  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
-  resources :admins
-  resources :categories
+  namespace :admin do
+    get '', to: 'base#index', as: '/'
+    resources :users
+    resources :categories
+    resources :books do
+      resources :reviews
+    end
+  end
+
+  resources :admin, only: %i[index delete]
   resources :users do
     member do
       get :following, :followers
@@ -15,5 +22,6 @@ Rails.application.routes.draw do
     resources :reviews
   end
   resources :follows, only: %i[create destroy]
+  resources :categories
   root 'books#index'
 end

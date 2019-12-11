@@ -24,6 +24,9 @@ gem 'turbolinks', '~> 5'
 gem 'will_paginate' 
 gem "font-awesome-rails"
 gem 'carrierwave'
+gem 'kaminari'
+gem "cancancan"
+gem 'bootstrap_sb_admin_base_v2'
 # gem 'redis', '~> 4.0' q
 # gem 'bcrypt', '~> 3.1.7'
 

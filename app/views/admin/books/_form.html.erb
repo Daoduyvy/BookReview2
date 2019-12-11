@@ -1,0 +1,30 @@
+<%= form_for(@book, remote: true, :html => { :role => "form" }) do |f| %>
+<div id="error_explanation" class="bg-danger text-danger">
+</div>
+ 
+<div class="row">
+ <div class="col-sm-6">
+  <div class="form-group">
+    <%= f.label :title, :class => "control-label" %>
+    <%= f.text_field :title, :class => "form-control first_input"  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :publish_date, :class => "control-label" %>
+    <%= f.text_field :publish_date, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :author, :class => "control-label" %>
+    <%= f.text_field :author, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => "control-label" %>
+    <%= f.text_field :description, :class => "form-control" %>
+  </div>
+</div>
+
+  <div class="form-group">
+    <%= f.submit  @book.new_record? ? "Create Create" : "Update book", :class => "btn btn-primary" %>
+  </div>
+</div>
+</div>
+<% end %>

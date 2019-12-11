@@ -1,21 +1,23 @@
-    
-<div class = "col-md-4" style="margin-top: 2%" >
-  <%= image_tag @book.book_img.url(:book_index),'data-action': "zoom"%>
-  <h2><%= @book.title %></h2>
-  <h3><%= @book.publish_date %></h3>
-  <h3><%= @book.author %></h3>
-  <h3><%= @book.category.name %></h3>
-  <%= link_to "Edit Book" , edit_book_path(@book) %>
-  <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you ok?"} %>
-  <%= render 'reviews/review' %>
-</div>
-<div class="row">
-  <div class = "col-md-6" >
-    <h3 style="font-size:15px;float: right;"><%= @book.description %></h3>
+  <div class = "col-md-4" style="margin-top: 2%;" >
+    <%= image_tag @book.book_img.url(:book_index),'data-action': "zoom"%>
+    <h2><%= @book.title %></h2>
+    <h3><%= @book.publish_date %></h3>
+    <h3><%= @book.author %></h3>
+    <h3><%= @book.category.name %></h3>
+    <% if user_signed_in? %>
+      <%= link_to "Edit Book" , edit_book_path(@book) %>
+      <%= link_to "Delete", book_path(@book), method: :delete, data: { confirm: "Are you ok?"} %>
+    <% end %>
   </div>
-    
-   
-</div>
+  <div class="row">
+    <div class = "col-md-6" >
+      <h3 style="font-size:15px;float: right;"><%= @book.description %></h3>
+    </div>
+  </div>
 
- <%= render 'reviews/form' %>
-
+  <%= render 'reviews/form' %>
+  <h2>Comment</h2>
+  <div class="rv" style="min-width:<%= @width %>px">
+    <%= render 'reviews/review' %>
+    <%= link_to_next_page @reviews, 'Load More', remote: true, id: "load_more_link" %>
+  </div>

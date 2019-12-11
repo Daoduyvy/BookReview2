@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReviewsController < ApplicationController
-  before_action :find_book
+  before_action :find_book 
   before_action :find_review, only: %i[edit update destroy show]
   WillPaginate.per_page = 2
   def new
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @reviews.destroy
+    @review.destroy
     redirect_to book_path(@book)
   end
 
@@ -41,6 +41,10 @@ class ReviewsController < ApplicationController
 
   def find_book
     @book = Book.find(params[:book_id])
+  end
+
+  def find_user
+    @user = User.find(params[:user_id])
   end
 
   def find_review
