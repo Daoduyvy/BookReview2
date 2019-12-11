@@ -1,2 +1,16 @@
-    <h1> Edit Review </h1>
-    <%= render 'form' %>
+<h1>Edit Review</h1>
+<%= simple_form_for [@book, @review] do |f | %>
+  <div id="rating-form" data-score="<%= @review.rating %>" >
+    <label> Rating </label>
+  </div>
+  <%= f.input :comment %>
+  <%= f.button :submit , label:"Edit"%>
+  <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
+<% end %>
+<script>
+  $('#rating-form').raty({
+      path: '/assets/',
+      scoreName: 'review[rating]'
+  });
+  $('#rating-form').raty('reload');
+</script>
