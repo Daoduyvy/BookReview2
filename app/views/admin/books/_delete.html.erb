@@ -1,5 +1,5 @@
                <!-- Delete Modal HTML -->
-                <div id="deleteBookModal" class="modal fade">
+                <div id="deleteBookModal_<%= book.id %>" class="modal fade">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -11,10 +11,7 @@
                         <p class="text-warning"><small>This action cannot be undone.</small></p>
                       </div>
                       <div class="modal-footer">
-                        <%= simple_form_for [:admin,book] , method: :delete do |f| %>
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <%= f.button(:submit, {value: "Delete Book", class: 'btn btn-primary', method: 'delete'}) %>
-                        <% end %>
+                        <%= link_to 'Destroy', [:admin,book], method: :delete, data: { confirm: 'Are you sure?' },remote: true, class: 'admin_delete', data: {toggle: "modal", target: "#modal"}%></td>
                       </div>
                     </div>
                   </div>

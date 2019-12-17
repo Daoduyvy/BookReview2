@@ -2,9 +2,8 @@
 
 class Admin::ReviewsController < ApplicationController
   layout 'admin'
-  before_action :find_review,:find_book,only: %i[edit update destroy show]
+  before_action :find_review,:find_book,only: %i[edit create update destroy show]
 
-  WillPaginate.per_page = 2
   def new
     @review = @book.reviews.build
   end
@@ -22,11 +21,17 @@ class Admin::ReviewsController < ApplicationController
   end
 
   def create
-    @book = Book.find(params[:book_id])
     @review = @book.reviews.build(review_params)
     @review.book_id = @book.id
     @review.user_id = current_user.id
-    redirect_to admin_book_path(@book) if @review.save
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to admin_book_review_path }
+        format.js
+      else
+        format.html { redirect_to admin_book_review_path }
+      end
+    end
   end
 
   def show; end
@@ -35,7 +40,6 @@ class Admin::ReviewsController < ApplicationController
   end
 
   def update
-    byebug
     redirect_to admin_book_review_path if @review.update(review_params)
   end
 

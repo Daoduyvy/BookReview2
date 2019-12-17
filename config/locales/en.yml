@@ -29,5 +29,30 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+
+
 en:
-  hello: "Hello world"
+  admin:
+    books:
+      tittle: "Home Page"
+      search: "Search"
+      add-book: "Add New Book"
+      book: "Book"
+      category: "Category"
+      user: "User"
+      review: "Reviews"
+      dasboard: "Dasboard"
+      manager: "Manager"
+      book: "Book"
+      image: "Image"
+      name: "Name"
+      author: "Author"
+      category: "Category"
+      publish_date: "Publish Date"
+      action: "Action"
+      link: "Link"
+    categories:
+      category: "Category"
+      action: "Action"
+      manager: "Manager"
+      add-category: "Add Category"

@@ -8,11 +8,11 @@
               <!-- Main Menu -->
               <div class="side-menu-container">
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-                  <li><a href="http://localhost:3000/admin/books"><span class="glyphicon glyphicon-plane"></span> Book</a></li>
-                  <li><a href="http://localhost:3000/admin/categories"><span class="glyphicon glyphicon-plane"></span> Category</a></li>
-                  <li><a href="http://localhost:3000/admin/users"><span class="glyphicon glyphicon-cloud"></span> User</a></li>
-                  <li><a href="http://localhost:3000/admin/reviews"><span class="glyphicon glyphicon-cloud"></span> Review</a></li>
+                  <li class="active"><a href="#"><span class="glyphicon glyphicon-dashboard"></span> <%= I18n.t("admin.books.dasboard") %></a></li>
+                  <li><a href="http://localhost:3000/admin/books"><span class="glyphicon glyphicon-plane"></span> <%= I18n.t("admin.books.book") %></a></li>
+                  <li><a href="http://localhost:3000/admin/categories"><span class="glyphicon glyphicon-plane"></span> <%= I18n.t("admin.books.category") %></a></li>
+                  <li><a href="http://localhost:3000/admin/users"><span class="glyphicon glyphicon-cloud"></span> <%= I18n.t("admin.books.user") %></a></li>
+                  <li><a href="http://localhost:3000/admin/reviews"><span class="glyphicon glyphicon-cloud"></span> <%= I18n.t("admin.books.review") %></a></li>
                   <!-- Dropdown-->
                   <li class="panel panel-default" id="dropdown">
                     <a data-toggle="collapse" href="#dropdown-lvl1">
@@ -44,7 +44,7 @@
                       </div>
                     </div>
                   </li>
-                  <li><a href="#"><span class="glyphicon glyphicon-signal"></span> Link</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-signal"></span>  <%= I18n.t("admin.books.link") %></a></li>
                 </ul>
               </div>
               <!-- /.navbar-collapse -->

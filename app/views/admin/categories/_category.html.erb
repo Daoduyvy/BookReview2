@@ -1,0 +1,37 @@
+<tr>
+  <td>
+    <span class="custom-checkbox">
+      <input type="checkbox" id="checkbox1" name="options[]" value="1">
+      <label for="checkbox1"></label>
+    </span>
+  </td>
+  <td><%= category.name %></td>
+  <td>
+    <a href="#editCategoryModal_<%= category.id %>" class="edit" data-toggle="modal">
+      <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+    </a>
+    <a href="#deleteCategoryModal_<%= category.id %>" class="delete" data-toggle="modal">
+      <i class="material-icons" data-toggle="tooltip" title="Delete" class="delete-category">&#xE872;</i>
+    </a>
+    <!-- Delete Modal HTML -->
+    <div id="deleteCategoryModal_<%= category.id %>" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Delete Book</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete these rBooks?</p>
+            <p class="text-warning"><small>This action cannot be undone.</small></p>
+          </div>
+          <div class="modal-footer">
+            <%= link_to 'Destroy', [:admin, category], method: :delete,
+                        data: {toggle: "modal", dismiss: "modal", target: "#modal"},
+                        remote: true, class: 'category_delete' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
