@@ -7,8 +7,8 @@
                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
-                          <%= simple_form_for [:admin,@book] , method: :post ,:html => { :multipart => true } do |f| %>
-                            <%= f.select :category_id, @categories %>
+                          <%= simple_form_for [:admin,@book] , remote: true ,method: :post ,:html => { :multipart => true } do |f| %>
+                            <%= select_tag(:category_id, options_for_select(@categories), include_blank: "Select a category", class: "form-control") %></br>
                             <%= f.file_field :book_img %>
                             <%= f.input :title %>
                             <%= f.input :publish_date ,as: :date %>

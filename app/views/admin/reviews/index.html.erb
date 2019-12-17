@@ -9,7 +9,7 @@
           <div class="col-sm-7" style= "padding-top:1%">
             <%= form_tag(admin_reviews_path, method: :get) do  %>
               <div class="col-md-6" id="adv-search">
-                <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search by title",autocomplate: 'off' %>
+                <%= text_field_tag :term, params[:term], class: "form-control", placeholder: "Search by title",autocomplete: 'off' %>
               </div>
               <div class="col-md-2" style = "padding-left:3%">
                 <%= submit_tag 'Search', class: "btn btn-primary"  %>

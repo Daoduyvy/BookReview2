@@ -1,0 +1,3 @@
+$("#book_<%= @book.id %>").html("<%= escape_javascript(render('admin/books/editbook', book:  @book)) %>");
+$('#editBookModal_<%= @book.id %>').modal('toggle');
+toastr.success('Book updated', 'Book Update')

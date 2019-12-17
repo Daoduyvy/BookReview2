@@ -1,0 +1,4 @@
+$("#category<%= @category.id %>").html("<%= escape_javascript(render('admin/categories/editcategory', category:  @category)) %>");
+$('#editCategoryModal_<%= @category.id %>').modal('toggle');
+toastr.success('Category updated','Update Category');
+

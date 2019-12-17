@@ -1,0 +1,20 @@
+  <!-- Delete Modal HTML -->
+  <div id="deleteCategoryModal_<%= category.id %>" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Book</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete these Books?</p>
+          <p class="text-warning"><small>This action cannot be undone.</small></p>
+        </div>
+        <div class="modal-footer">
+          <%= link_to 'Destroy', [:admin, category], method: :delete,
+                      data: {toggle: "modal", dismiss: "modal", target: "#modal"},
+                      remote: true, class: 'category_delete' %>
+        </div>
+      </div>
+    </div>
+  </div>

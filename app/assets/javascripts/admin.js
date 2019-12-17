@@ -1,5 +1,5 @@
 //= require jquery.raty.js
-
+//= require rails-ujs
 
 $(document).ready(function(){
     // Activate tooltip

@@ -1,0 +1,6 @@
+$('.category_delete').bind('ajax:success', function () {
+    $(this).closest('tr').fadeOut();
+    toastr.error('Category destroyed','Destroy Category');
+});
+
+
