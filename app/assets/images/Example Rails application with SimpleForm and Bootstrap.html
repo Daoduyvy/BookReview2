@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)http://simple-form-bootstrap.plataformatec.com.br/examples/horizontal -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Example Rails application with SimpleForm and Bootstrap</title>
+    <link rel="stylesheet" media="screen" href="./Example Rails application with SimpleForm and Bootstrap_files/application-2a365c403d58c5065423364844c3c127afc5e84b3d8f22fb6d46b06af888243a.css">
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="nnS1ZJqbS9xX0/XPpCG1gw6/r/oTiMOxmiNE87zWEwt1XpYyUlDrjA1gT/cM2YSY1RUSeg0txD6bCvpW4ZdVuA==">
+    
+
+    <link rel="shortcut icon" href="http://simple-form-bootstrap.plataformatec.com.br/favicon.ico" type="image/x-icon">
+  </head>
+  <body data-action="new" data-controller="horizontals" data-path="/examples/horizontal">
+    <div class="app-header">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="http://simple-form-bootstrap.plataformatec.com.br/">Simple Form &amp; Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-header">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://simple-form-bootstrap.plataformatec.com.br/examples/horizontal#" id="navbar-example" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Examples
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbar-example">
+              <a class="dropdown-item" href="http://simple-form-bootstrap.plataformatec.com.br/examples">Overview</a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="http://simple-form-bootstrap.plataformatec.com.br/examples/vertical">Vertical Form</a>
+                <a class="dropdown-item" href="http://simple-form-bootstrap.plataformatec.com.br/examples/horizontal">Horizontal Form</a>
+                <a class="dropdown-item" href="http://simple-form-bootstrap.plataformatec.com.br/examples/inline">Inline Form</a>
+                <a class="dropdown-item" href="http://simple-form-bootstrap.plataformatec.com.br/examples/custom">Custom Form</a>
+                <a class="dropdown-item" href="http://simple-form-bootstrap.plataformatec.com.br/examples/input_group">Input Group Form</a>
+                <a class="dropdown-item" href="http://simple-form-bootstrap.plataformatec.com.br/examples/floating_label">Floating Labels Form</a>
+            </div>
+          </li>
+          <li class="nav-item "><a class="nav-link" href="http://simple-form-bootstrap.plataformatec.com.br/documentation">Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <a href="http://github.com/rafaelfranca/simple_form-bootstrap" class="github-corner" aria-label="View source on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+  </a>
+</div>
+
+    
+
+    
+    <div class="app-breadcrumb container">
+  <div class="d-flex flex-row justify-content-between">
+    <ol class="breadcrumb bg-transparent px-0">
+        <li class="breadcrumb-item"><a href="http://simple-form-bootstrap.plataformatec.com.br/">Home</a></li>
+  <li class="breadcrumb-item"><a href="http://simple-form-bootstrap.plataformatec.com.br/examples">Examples</a></li>
+  <li class="breadcrumb-item active">Horizontal Form</li>
+
+    </ol>
+
+    <div>
+      <button type="button" class="btn btn-sm btn-outline-secondary mt-2 mr-2" data-tooltip="" data-placement="bottom" data-trigger="hover" title="" data-toggle="button" aria-pressed="false" autocomplete="off" data-original-title="compare by clicking fast">
+        Swap
+      </button>
+
+      <div class="btn-group btn-group-toggle mt-2" data-toggle="buttons">
+        <label class="btn btn-sm btn-outline-secondary">
+          <input type="radio" name="view" id="stack" autocomplete="off"> Stack
+        </label>
+        <label class="btn btn-sm btn-outline-secondary active">
+          <input type="radio" name="view" id="split" autocomplete="off" checked=""> Split
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    
+<div class="app-example container">
+  <div class="row">
+    <div class="col-md-6" data-target="toggle.grid">
+  <div class="card border-bootstrap box-shadow mb-4">
+    <div class="card-header text-bootstrap d-flex align-items-center justify-content-between">
+      <div>
+        <strong>Bootstrap</strong>: Horizontal Form<br>
+        <small class="text-muted">Static Bootstrap markup from docs</small>
+      </div>
+      <div>
+        <button class="btn btn-sm btn-outline-bootstrap" data-toggle="modal" data-target="#modal-bootstrap" data-tooltip="" title="" data-original-title="View form source code">Source</button>
+        <button class="btn btn-sm btn-bootstrap" data-fill="bootstrap" data-tooltip="" title="" data-original-title="Fill form with valid data">Fill</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <form class="needs-validation" novalidate="">
+  <div class="alert alert-danger d-none">Please review the problems below:</div>
+
+  <div class="form-group row">
+    <label for="exampleInputName" class="col-sm-3 col-form-label">Name</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="exampleInputName" placeholder="Your name" required="">
+      <div class="invalid-feedback">Name can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Text input example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleInputEmail" class="col-sm-3 col-form-label">Email</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="exampleInputEmail" placeholder="Enter email" autocomplete="email" required="">
+      <div class="invalid-feedback">Email can't be blank</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleInputPassword" class="col-sm-3 col-form-label">Password</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password" autocomplete="current-password" required="">
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Password input example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleCustomFile" class="col-sm-3 col-form-label">Avatar</label>
+    <div class="col-sm-9">
+      <input type="file" class="form-control-file" id="exampleCustomFile" required="">
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">File input example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleTextareaBio" class="col-sm-3 col-form-label">Bio</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" id="exampleTextareaBio" rows="2" placeholder="Tell us your story" required=""></textarea>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Textarea input example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">Birthday</label>
+    <div class="col-sm-9">
+      <div class="d-flex flex-row justify-content-between align-items-center">
+        <select id="exampleInputDateYear" class="form-control mr-1" required="">
+          <option></option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+        </select>
+
+        <select id="exampleInputDateMonth" class="form-control mx-1" required="">
+          <option></option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+
+        <select id="exampleInputDateDay" class="form-control ml-1" required="">
+          <option></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+      </div>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Date multi select example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label pt-0">Color</label>
+    <div class="col-sm-9">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio1" value="option1" required="">
+        <label class="form-check-label" for="exampleInlineRadio1">Red</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio2" value="option2" required="">
+        <label class="form-check-label" for="exampleInlineRadio2">Pink</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio3" value="option3" required="">
+        <label class="form-check-label" for="exampleInlineRadio3">Violet</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio4" value="option4" required="">
+        <label class="form-check-label" for="exampleInlineRadio4">Indigo</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio5" value="option5" required="">
+        <label class="form-check-label" for="exampleInlineRadio5">Blue</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio6" value="option6" required="">
+        <label class="form-check-label" for="exampleInlineRadio6">Teal</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio7" value="option7" required="">
+        <label class="form-check-label" for="exampleInlineRadio7">Green</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="exampleInlineRadioColor" id="exampleInlineRadio8" value="option8" required="">
+        <label class="form-check-label" for="exampleInlineRadio8">Yellow</label>
+      </div>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Collection as inline radio buttons example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label pt-0">Fruit</label>
+    <div class="col-sm-9">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox1" value="option1" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox1">Apple</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox2" value="option2" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox2">Banana</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox3" value="option3" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox3">Cherry</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox4" value="option4" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox4">Coconut</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox5" value="option5" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox5">Grape</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox6" value="option6" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox6">Lime</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox7" value="option7" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox7">Mango</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox8" value="option8" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox8">Orange</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox9" value="option9" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox9">Pear</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="exampleInlineCheckbox10" value="option10" required="">
+        <label class="form-check-label" for="exampleInlineCheckbox10">Pineapple</label>
+      </div>
+      <small class="form-text text-muted">Collection as inline check boxes example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleSelectMusic" class="col-sm-3 col-form-label">Music</label>
+    <div class="col-sm-9">
+      <select multiple="" class="form-control" id="exampleSelectMusic" required="">
+        <option value="rock">Rock</option>
+        <option value="pop">Pop</option>
+        <option value="jazz">Jazz</option>
+        <option value="heavy_metal">Heavy Metal</option>
+        <option value="hip_hop">Hip Hop</option>
+        <option value="house">House</option>
+        <option value="electronic_dance">EDM</option>
+        <option value="dance">Dance</option>
+        <option value="techno">Techno</option>
+      </select>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Collection multiple select example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleSelectLanguage" class="col-sm-3 col-form-label">Language</label>
+    <div class="col-sm-9">
+      <select class="form-control" id="exampleSelectLanguage" required="">
+        <option value="">Select your Language</option>
+        <option value="en">English</option>
+        <option value="de">German</option>
+        <option value="es">Spanish</option>
+        <option value="ru">Russian</option>
+      </select>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Collection select example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label pt-0">Pill</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadiosPill" id="exampleRadiosPillRed" value="red" required="">
+        <label class="form-check-label" for="exampleRadiosPillRed">
+          Red pill
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadiosPill" id="exampleRadiosPillBlue" value="blue" required="">
+        <label class="form-check-label" for="exampleRadiosPillBlue">
+          Blue pill
+        </label>
+      </div>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Collection as radio buttons example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label pt-0">Choises</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="exampleCheckbox1" value="option1" required="">
+        <label class="form-check-label" for="exampleCheckbox1">Learn the Ruby programming language</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="exampleCheckbox2" value="option1" required="">
+        <label class="form-check-label" for="exampleCheckbox2">Create a Ruby on Rails application</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="exampleCheckbox3" value="option1" required="">
+        <label class="form-check-label" for="exampleCheckbox3">Practice Ruby, Rails, Tests and Simple Form</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="exampleCheckbox4" value="option1" required="">
+        <label class="form-check-label" for="exampleCheckbox4">Deploy your application in the cloud</label>
+      </div>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Collection as check boxes example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleInputFriends" class="col-sm-3 col-form-label">Friends</label>
+    <div class="col-sm-9">
+      <input type="number" class="form-control" id="exampleInputFriends" placeholder="Number of Friends" required="">
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Integer input example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="exampleRangeMood" class="col-sm-3 col-form-label">Mood</label>
+    <div class="col-sm-9">
+      <input type="range" class="form-control-range" id="exampleRangeMood" required="">
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Integer range example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">Awake</label>
+    <div class="col-sm-9">
+      <div class="d-flex flex-row justify-content-between align-items-center">
+        <select id="exampleInputTimeHour" class="form-control mr-1" required="">
+          <option></option>
+          <option value="00">00</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+        </select>
+        :
+        <select id="exampleInputTimeMinute" class="form-control ml-1" required="">
+          <option></option>
+          <option value="00">00</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+      <div class="invalid-feedback">Please provide a valid value.</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Time multi select example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label">First kiss</label>
+    <div class="col-sm-9">
+      <div class="d-flex flex-row justify-content-between align-items-center">
+        <select id="exampleInputDatetimeYear" class="form-control mr-1" required="">
+          <option></option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+        </select>
+
+        <select id="exampleInputDatetimeMonth" class="form-control mx-1" required="">
+          <option></option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+
+        <select id="exampleInputDatetimeDay" class="form-control mx-1" required="">
+          <option></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        —
+        <select id="exampleInputDatetimeHour" class="form-control mx-1" required="">
+          <option></option>
+          <option value="00">00</option>
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+        </select>
+        :
+        <select id="exampleInputDatetimeMinute" class="form-control ml-1" required="">
+          <option></option>
+          <option value="00">00</option>
+          <option value="30">30</option>
+        </select>
+      </div>
+      <small class="form-text text-muted">Datetime multi select example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-3 col-form-label pt-0">Active</label>
+    <div class="col-sm-9">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleBooleanRadio" id="exampleBooleanRadioYes" value="red" required="">
+        <label class="form-check-label" for="exampleBooleanRadioYes">Yes</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleBooleanRadio" id="exampleBooleanRadioNo" value="red" required="">
+        <label class="form-check-label" for="exampleBooleanRadioNO">No</label>
+      </div>
+      <div class="invalid-feedback">Terms must be accepted</div>
+      <div class="valid-feedback">Looks good!</div>
+      <small class="form-text text-muted">Boolean as radio button example</small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-9 offset-sm-3">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="exampleCheckTerms" required="">
+        <label class="form-check-label" for="exampleCheckTerms">Terms</label>
+        <div class="invalid-feedback">Terms must be accepted</div>
+        <div class="valid-feedback">Looks good!</div>
+        <small class="form-text text-muted">Boolean as check box example</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row mb-0">
+    <div class="col-sm-9 offset-sm-3">
+      <button type="submit" class="btn btn-primary">Create User!</button>
+      <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+    </div>
+  </div>
+</form>
+
+    </div>
+  </div>
+</div>
+
+    <div class="col-md-6" data-target="toggle.grid">
+  <div class="card border-simpleform box-shadow mb-4">
+    <div class="card-header text-simpleform d-flex align-items-center justify-content-between">
+      <div>
+        <strong>Simple Form</strong>: Horizontal Form<br>
+        <small class="text-muted">Dynamic markup generated by Simple Form</small>
+      </div>
+      <div>
+        <button class="btn btn-sm btn-outline-simpleform" data-toggle="modal" data-target="#modal-simpleform" data-tooltip="" title="" data-original-title="View form source code">Source</button>
+        <button class="btn btn-sm btn-simpleform" data-fill="simpleform" data-tooltip="" title="" data-original-title="Fill form with valid data">Fill</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <form class="simple_form new_user" id="new_user" novalidate="novalidate" enctype="multipart/form-data" action="http://simple-form-bootstrap.plataformatec.com.br/examples/horizontal" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="nnS1ZJqbS9xX0/XPpCG1gw6/r/oTiMOxmiNE87zWEwt1XpYyUlDrjA1gT/cM2YSY1RUSeg0txD6bCvpW4ZdVuA==">
+
+  
+
+  <div class="form-group row string required user_name"><label class="col-sm-3 col-form-label string required" for="user_name">Name <abbr title="required">*</abbr></label><div class="col-sm-9"><input class="form-control string required" placeholder="Your name" type="text" name="user[name]" id="user_name"><small class="form-text text-muted">Text input example</small></div></div>
+
+  <div class="form-group row email required user_email"><label class="col-sm-3 col-form-label email required" for="user_email">Email <abbr title="required">*</abbr></label><div class="col-sm-9"><input class="form-control string email required" autocomplete="email" placeholder="Enter email" type="email" name="user[email]" id="user_email"><small class="form-text text-muted">We'll never share your email with anyone else.</small></div></div>
+
+  <div class="form-group row password optional user_password"><label class="col-sm-3 col-form-label password optional" for="user_password">Password</label><div class="col-sm-9"><input class="form-control password optional" autocomplete="current-password" placeholder="Password" type="password" name="user[password]" id="user_password"><small class="form-text text-muted">Password input example</small></div></div>
+
+  <div class="form-group row file required user_avatar"><label class="col-sm-3 col-form-label file required" for="user_avatar">Avatar <abbr title="required">*</abbr></label><div class="col-sm-9"><input accept="image/png image/jpeg image/gif image/bmp image/tiff image/svg+xml" class="file required" type="file" name="user[avatar]" id="user_avatar"><small class="form-text text-muted">File input example</small></div></div>
+
+  <div class="form-group row text optional user_bio"><label class="col-sm-3 col-form-label text optional" for="user_bio">Bio</label><div class="col-sm-9"><textarea class="form-control text optional" placeholder="Tell us your story" name="user[bio]" id="user_bio"></textarea><small class="form-text text-muted">Textarea input example</small></div></div>
+
+  <div class="form-group row date required user_birthday"><label class="col-sm-3 col-form-label date required" for="user_birthday_1i">Birthday <abbr title="required">*</abbr></label><div class="col-sm-9"><div class="d-flex flex-row justify-content-between align-items-center"><select id="user_birthday_1i" name="user[birthday(1i)]" class="form-control mx-1 date required">
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019" selected="selected">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+</select>
+<select id="user_birthday_2i" name="user[birthday(2i)]" class="form-control mx-1 date required">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10">October</option>
+<option value="11">November</option>
+<option value="12" selected="selected">December</option>
+</select>
+<select id="user_birthday_3i" name="user[birthday(3i)]" class="form-control mx-1 date required">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16" selected="selected">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+</div><small class="form-text text-muted">Date multi select example</small></div></div>
+
+  <div class="form-group row radio_buttons required user_color"><label class="col-sm-3 col-form-label pt-0 radio_buttons required">Color <abbr title="required">*</abbr></label><div class="col-sm-9"><input type="hidden" name="user[color]" value=""><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="red" name="user[color]" id="user_color_red"><label class="form-check-label collection_radio_buttons" for="user_color_red">Red</label></div><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="pink" name="user[color]" id="user_color_pink"><label class="form-check-label collection_radio_buttons" for="user_color_pink">Pink</label></div><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="violet" name="user[color]" id="user_color_violet"><label class="form-check-label collection_radio_buttons" for="user_color_violet">Violet</label></div><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="indigo" name="user[color]" id="user_color_indigo"><label class="form-check-label collection_radio_buttons" for="user_color_indigo">Indigo</label></div><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="blue" name="user[color]" id="user_color_blue"><label class="form-check-label collection_radio_buttons" for="user_color_blue">Blue</label></div><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="teal" name="user[color]" id="user_color_teal"><label class="form-check-label collection_radio_buttons" for="user_color_teal">Teal</label></div><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="green" name="user[color]" id="user_color_green"><label class="form-check-label collection_radio_buttons" for="user_color_green">Green</label></div><div class="form-check form-check-inline"><input class="form-check-input radio_buttons required" type="radio" value="yellow" name="user[color]" id="user_color_yellow"><label class="form-check-label collection_radio_buttons" for="user_color_yellow">Yellow</label></div><small class="form-text text-muted">Collection as inline radio buttons example</small></div></div>
+
+  <div class="form-group row check_boxes required user_fruit"><label class="col-sm-3 col-form-label pt-0 check_boxes required">Fruit <abbr title="required">*</abbr></label><div class="col-sm-9"><input type="hidden" name="user[fruit][]" value=""><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="apple" name="user[fruit][]" id="user_fruit_apple"><label class="form-check-label collection_check_boxes" for="user_fruit_apple">Apple</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="banana" name="user[fruit][]" id="user_fruit_banana"><label class="form-check-label collection_check_boxes" for="user_fruit_banana">Banana</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="cherry" name="user[fruit][]" id="user_fruit_cherry"><label class="form-check-label collection_check_boxes" for="user_fruit_cherry">Cherry</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="coconut" name="user[fruit][]" id="user_fruit_coconut"><label class="form-check-label collection_check_boxes" for="user_fruit_coconut">Coconut</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="grape" name="user[fruit][]" id="user_fruit_grape"><label class="form-check-label collection_check_boxes" for="user_fruit_grape">Grape</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="lime" name="user[fruit][]" id="user_fruit_lime"><label class="form-check-label collection_check_boxes" for="user_fruit_lime">Lime</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="mango" name="user[fruit][]" id="user_fruit_mango"><label class="form-check-label collection_check_boxes" for="user_fruit_mango">Mango</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="orange" name="user[fruit][]" id="user_fruit_orange"><label class="form-check-label collection_check_boxes" for="user_fruit_orange">Orange</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="pear" name="user[fruit][]" id="user_fruit_pear"><label class="form-check-label collection_check_boxes" for="user_fruit_pear">Pear</label></div><div class="form-check form-check-inline"><input class="form-check-input check_boxes required" type="checkbox" value="pineapple" name="user[fruit][]" id="user_fruit_pineapple"><label class="form-check-label collection_check_boxes" for="user_fruit_pineapple">Pineapple</label></div><small class="form-text text-muted">Collection as inline check boxes example</small></div></div>
+
+  <div class="form-group row select required user_music"><label class="col-sm-3 col-form-label select required" for="user_music">Music <abbr title="required">*</abbr></label><div class="col-sm-9"><input name="user[music][]" type="hidden" value=""><select class="form-control select required" multiple="multiple" name="user[music][]" id="user_music"><option value="rock">Rock</option>
+<option value="pop">Pop</option>
+<option value="jazz">Jazz</option>
+<option value="heavy_metal">Heavy Metal</option>
+<option value="hip_hop">Hip Hop</option>
+<option value="house">House</option>
+<option value="electronic_dance">EDM</option>
+<option value="dance">Dance</option>
+<option value="techno">Techno</option></select><small class="form-text text-muted">Collection multiple select example</small></div></div>
+
+  <div class="form-group row select optional user_language"><label class="col-sm-3 col-form-label select optional" for="user_language">Language</label><div class="col-sm-9"><select class="form-control select optional" name="user[language]" id="user_language"><option value="">Select your Language</option>
+<option value="en">English</option>
+<option value="de">German</option>
+<option value="es">Spanish</option>
+<option value="ru">Russian</option></select><small class="form-text text-muted">Collection select example</small></div></div>
+
+  <div class="form-group row radio_buttons optional user_pill"><label class="col-sm-3 col-form-label pt-0 radio_buttons optional">Pill</label><div class="col-sm-9"><input type="hidden" name="user[pill]" value=""><div class="form-check"><input class="form-check-input radio_buttons optional" type="radio" value="red" name="user[pill]" id="user_pill_red"><label class="form-check-label collection_radio_buttons" for="user_pill_red">Red pill</label></div><div class="form-check"><input class="form-check-input radio_buttons optional" type="radio" value="blue" name="user[pill]" id="user_pill_blue"><label class="form-check-label collection_radio_buttons" for="user_pill_blue">Blue pill</label></div><small class="form-text text-muted">Collection as radio buttons example</small></div></div>
+
+  <div class="form-group row check_boxes required user_choises"><label class="col-sm-3 col-form-label pt-0 check_boxes required">Choises <abbr title="required">*</abbr></label><div class="col-sm-9"><input type="hidden" name="user[choises][]" value=""><div class="form-check"><input class="form-check-input check_boxes required" type="checkbox" value="a" name="user[choises][]" id="user_choises_a"><label class="form-check-label collection_check_boxes" for="user_choises_a">Learn the Ruby programming language</label></div><div class="form-check"><input class="form-check-input check_boxes required" type="checkbox" value="b" name="user[choises][]" id="user_choises_b"><label class="form-check-label collection_check_boxes" for="user_choises_b">Create a Ruby on Rails application</label></div><div class="form-check"><input class="form-check-input check_boxes required" type="checkbox" value="c" name="user[choises][]" id="user_choises_c"><label class="form-check-label collection_check_boxes" for="user_choises_c">Practice Ruby, Rails, Tests and Simple Form</label></div><div class="form-check"><input class="form-check-input check_boxes required" type="checkbox" value="d" name="user[choises][]" id="user_choises_d"><label class="form-check-label collection_check_boxes" for="user_choises_d">Deploy your application in the cloud</label></div><small class="form-text text-muted">Collection as check boxes example</small></div></div>
+
+  <div class="form-group row integer optional user_friends"><label class="col-sm-3 col-form-label integer optional" for="user_friends">Friends</label><div class="col-sm-9"><input class="form-control numeric integer optional" placeholder="Number of Friends" type="number" step="1" name="user[friends]" id="user_friends"><small class="form-text text-muted">Integer input example</small></div></div>
+
+  <div class="form-group row range optional user_mood"><label class="col-sm-3 col-form-label range optional" for="user_mood">Mood</label><div class="col-sm-9"><input class="form-control-range numeric range optional" type="range" step="1" name="user[mood]" id="user_mood"><small class="form-text text-muted">Integer range example</small></div></div>
+
+  <div class="form-group row time required user_awake"><label class="col-sm-3 col-form-label time required" for="user_awake_4i">Awake <abbr title="required">*</abbr></label><div class="col-sm-9"><div class="d-flex flex-row justify-content-between align-items-center"><input type="hidden" id="user_awake_1i" name="user[awake(1i)]" value="2019">
+<input type="hidden" id="user_awake_2i" name="user[awake(2i)]" value="12">
+<input type="hidden" id="user_awake_3i" name="user[awake(3i)]" value="16">
+<select id="user_awake_4i" name="user[awake(4i)]" class="form-control mx-1 time required">
+<option value="00">00</option>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06" selected="selected">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+</select>
+ : <select id="user_awake_5i" name="user[awake(5i)]" class="form-control mx-1 time required">
+<option value="00">00</option>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17" selected="selected">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+</select>
+</div><small class="form-text text-muted">Time multi select example</small></div></div>
+
+  <div class="form-group row datetime required user_first_kiss"><label class="col-sm-3 col-form-label datetime required" for="user_first_kiss_1i">First kiss <abbr title="required">*</abbr></label><div class="col-sm-9"><div class="d-flex flex-row justify-content-between align-items-center"><select id="user_first_kiss_1i" name="user[first_kiss(1i)]" class="form-control mx-1 datetime required">
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019" selected="selected">2019</option>
+<option value="2020">2020</option>
+<option value="2021">2021</option>
+<option value="2022">2022</option>
+<option value="2023">2023</option>
+<option value="2024">2024</option>
+</select>
+<select id="user_first_kiss_2i" name="user[first_kiss(2i)]" class="form-control mx-1 datetime required">
+<option value="1">January</option>
+<option value="2">February</option>
+<option value="3">March</option>
+<option value="4">April</option>
+<option value="5">May</option>
+<option value="6">June</option>
+<option value="7">July</option>
+<option value="8">August</option>
+<option value="9">September</option>
+<option value="10">October</option>
+<option value="11">November</option>
+<option value="12" selected="selected">December</option>
+</select>
+<select id="user_first_kiss_3i" name="user[first_kiss(3i)]" class="form-control mx-1 datetime required">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16" selected="selected">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+ — <select id="user_first_kiss_4i" name="user[first_kiss(4i)]" class="form-control mx-1 datetime required">
+<option value="00">00</option>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06" selected="selected">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+</select>
+ : <select id="user_first_kiss_5i" name="user[first_kiss(5i)]" class="form-control mx-1 datetime required">
+<option value="00">00</option>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17" selected="selected">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+</select>
+</div><small class="form-text text-muted">Datetime multi select example</small></div></div>
+
+  <div class="form-group row radio_buttons required user_active"><label class="col-sm-3 col-form-label pt-0 radio_buttons required">Active <abbr title="required">*</abbr></label><div class="col-sm-9"><input type="hidden" name="user[active]" value=""><div class="form-check"><input class="form-check-input radio_buttons required" type="radio" value="true" name="user[active]" id="user_active_true"><label class="form-check-label collection_radio_buttons" for="user_active_true">Yes</label></div><div class="form-check"><input class="form-check-input radio_buttons required" readonly="readonly" type="radio" value="false" name="user[active]" id="user_active_false"><label class="form-check-label collection_radio_buttons" for="user_active_false">No</label></div><small class="form-text text-muted">Boolean as radio button example</small></div></div>
+
+  <div class="form-group row boolean optional user_terms"><label class="col-sm-3">Terms</label><div class="col-sm-9"><div class="form-check"><input name="user[terms]" type="hidden" value="0"><input class="form-check-input boolean optional" type="checkbox" value="1" name="user[terms]" id="user_terms"><label class="form-check-label boolean optional" for="user_terms">Terms</label><small class="form-text text-muted">Boolean as check box example</small></div></div></div>
+
+  <div class="form-group row mb-0">
+    <div class="col-sm-9 offset-sm-3">
+      <input type="submit" name="commit" value="Create User!" class="btn btn-primary" data-disable-with="Create User!">
+      <button name="button" type="reset" class="btn btn-outline-secondary">Cancel</button>
+    </div>
+  </div>
+</form>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <div class="row justify-content-center">
+  <div class="col-8">
+    <div class="text-center">
+      <small class="d-block mb-2">Swap – <kbd>ctl+s</kbd></small>
+      <small class="d-block">Tipp – Submit Bootstrap Form <em>after</em> Simple Form to compare invalid feedback.</small>
+    </div>
+  </div>
+</div>
+
+
+  <div id="modal-bootstrap" class="modal fade" tabindex="-1" role="dialog" aria_hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Bootstrap Source</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight p-4 mb-0"><code><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"needs-validation"</span> <span class="na">novalidate</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger d-none"</span><span class="nt">&gt;</span>Please review the problems below:<span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputName"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputName"</span> <span class="na">placeholder=</span><span class="s">"Your name"</span> <span class="na">required</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Name can't be blank<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Text input example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputEmail"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputEmail"</span> <span class="na">placeholder=</span><span class="s">"Enter email"</span> <span class="na">autocomplete=</span><span class="s">"email"</span> <span class="na">required</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Email can't be blank<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>We'll never share your email with anyone else.<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputPassword"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Password<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputPassword"</span> <span class="na">placeholder=</span><span class="s">"Password"</span> <span class="na">autocomplete=</span><span class="s">"current-password"</span> <span class="na">required</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Password input example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleCustomFile"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Avatar<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">class=</span><span class="s">"form-control-file"</span> <span class="na">id=</span><span class="s">"exampleCustomFile"</span> <span class="na">required</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>File input example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleTextareaBio"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Bio<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleTextareaBio"</span> <span class="na">rows=</span><span class="s">"2"</span> <span class="na">placeholder=</span><span class="s">"Tell us your story"</span> <span class="na">required</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Textarea input example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Birthday<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-flex flex-row justify-content-between align-items-center"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDateYear"</span> <span class="na">class=</span><span class="s">"form-control mr-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2013"</span><span class="nt">&gt;</span>2013<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2014"</span><span class="nt">&gt;</span>2014<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2015"</span><span class="nt">&gt;</span>2015<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2016"</span><span class="nt">&gt;</span>2016<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2017"</span><span class="nt">&gt;</span>2017<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2018"</span><span class="nt">&gt;</span>2018<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2019"</span><span class="nt">&gt;</span>2019<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2020"</span><span class="nt">&gt;</span>2020<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2021"</span><span class="nt">&gt;</span>2021<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2022"</span><span class="nt">&gt;</span>2022<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2023"</span><span class="nt">&gt;</span>2023<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDateMonth"</span> <span class="na">class=</span><span class="s">"form-control mx-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>January<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>February<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>March<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"4"</span><span class="nt">&gt;</span>April<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"5"</span><span class="nt">&gt;</span>May<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"6"</span><span class="nt">&gt;</span>June<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"7"</span><span class="nt">&gt;</span>July<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8"</span><span class="nt">&gt;</span>August<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"9"</span><span class="nt">&gt;</span>September<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>October<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"11"</span><span class="nt">&gt;</span>November<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"12"</span><span class="nt">&gt;</span>December<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDateDay"</span> <span class="na">class=</span><span class="s">"form-control ml-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"4"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"5"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"6"</span><span class="nt">&gt;</span>6<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"7"</span><span class="nt">&gt;</span>7<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8"</span><span class="nt">&gt;</span>8<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"9"</span><span class="nt">&gt;</span>9<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"11"</span><span class="nt">&gt;</span>11<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"12"</span><span class="nt">&gt;</span>12<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"13"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"14"</span><span class="nt">&gt;</span>14<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"15"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"16"</span><span class="nt">&gt;</span>16<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"17"</span><span class="nt">&gt;</span>17<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"18"</span><span class="nt">&gt;</span>18<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"19"</span><span class="nt">&gt;</span>19<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"20"</span><span class="nt">&gt;</span>20<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"21"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"22"</span><span class="nt">&gt;</span>22<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"23"</span><span class="nt">&gt;</span>23<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"24"</span><span class="nt">&gt;</span>24<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"25"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"26"</span><span class="nt">&gt;</span>26<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"27"</span><span class="nt">&gt;</span>27<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"28"</span><span class="nt">&gt;</span>28<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"29"</span><span class="nt">&gt;</span>29<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"30"</span><span class="nt">&gt;</span>30<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"31"</span><span class="nt">&gt;</span>31<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Date multi select example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label pt-0"</span><span class="nt">&gt;</span>Color<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio1"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio1"</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio2"</span> <span class="na">value=</span><span class="s">"option2"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio2"</span><span class="nt">&gt;</span>Pink<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio3"</span> <span class="na">value=</span><span class="s">"option3"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio3"</span><span class="nt">&gt;</span>Violet<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio4"</span> <span class="na">value=</span><span class="s">"option4"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio4"</span><span class="nt">&gt;</span>Indigo<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio5"</span> <span class="na">value=</span><span class="s">"option5"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio5"</span><span class="nt">&gt;</span>Blue<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio6"</span> <span class="na">value=</span><span class="s">"option6"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio6"</span><span class="nt">&gt;</span>Teal<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio7"</span> <span class="na">value=</span><span class="s">"option7"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio7"</span><span class="nt">&gt;</span>Green<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleInlineRadioColor"</span> <span class="na">id=</span><span class="s">"exampleInlineRadio8"</span> <span class="na">value=</span><span class="s">"option8"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineRadio8"</span><span class="nt">&gt;</span>Yellow<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Collection as inline radio buttons example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label pt-0"</span><span class="nt">&gt;</span>Fruit<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox1"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox1"</span><span class="nt">&gt;</span>Apple<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox2"</span> <span class="na">value=</span><span class="s">"option2"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox2"</span><span class="nt">&gt;</span>Banana<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox3"</span> <span class="na">value=</span><span class="s">"option3"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox3"</span><span class="nt">&gt;</span>Cherry<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox4"</span> <span class="na">value=</span><span class="s">"option4"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox4"</span><span class="nt">&gt;</span>Coconut<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox5"</span> <span class="na">value=</span><span class="s">"option5"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox5"</span><span class="nt">&gt;</span>Grape<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox6"</span> <span class="na">value=</span><span class="s">"option6"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox6"</span><span class="nt">&gt;</span>Lime<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox7"</span> <span class="na">value=</span><span class="s">"option7"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox7"</span><span class="nt">&gt;</span>Mango<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox8"</span> <span class="na">value=</span><span class="s">"option8"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox8"</span><span class="nt">&gt;</span>Orange<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox9"</span> <span class="na">value=</span><span class="s">"option9"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox9"</span><span class="nt">&gt;</span>Pear<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check form-check-inline"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleInlineCheckbox10"</span> <span class="na">value=</span><span class="s">"option10"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleInlineCheckbox10"</span><span class="nt">&gt;</span>Pineapple<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Collection as inline check boxes example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleSelectMusic"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Music<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">multiple=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleSelectMusic"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"rock"</span><span class="nt">&gt;</span>Rock<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"pop"</span><span class="nt">&gt;</span>Pop<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"jazz"</span><span class="nt">&gt;</span>Jazz<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"heavy_metal"</span><span class="nt">&gt;</span>Heavy Metal<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"hip_hop"</span><span class="nt">&gt;</span>Hip Hop<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"house"</span><span class="nt">&gt;</span>House<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"electronic_dance"</span><span class="nt">&gt;</span>EDM<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"dance"</span><span class="nt">&gt;</span>Dance<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"techno"</span><span class="nt">&gt;</span>Techno<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Collection multiple select example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleSelectLanguage"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Language<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleSelectLanguage"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Select your Language<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"en"</span><span class="nt">&gt;</span>English<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"de"</span><span class="nt">&gt;</span>German<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"es"</span><span class="nt">&gt;</span>Spanish<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"ru"</span><span class="nt">&gt;</span>Russian<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Collection select example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label pt-0"</span><span class="nt">&gt;</span>Pill<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleRadiosPill"</span> <span class="na">id=</span><span class="s">"exampleRadiosPillRed"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleRadiosPillRed"</span><span class="nt">&gt;</span>
+          Red pill
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleRadiosPill"</span> <span class="na">id=</span><span class="s">"exampleRadiosPillBlue"</span> <span class="na">value=</span><span class="s">"blue"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleRadiosPillBlue"</span><span class="nt">&gt;</span>
+          Blue pill
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Collection as radio buttons example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label pt-0"</span><span class="nt">&gt;</span>Choises<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleCheckbox1"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleCheckbox1"</span><span class="nt">&gt;</span>Learn the Ruby programming language<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleCheckbox2"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleCheckbox2"</span><span class="nt">&gt;</span>Create a Ruby on Rails application<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleCheckbox3"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleCheckbox3"</span><span class="nt">&gt;</span>Practice Ruby, Rails, Tests and Simple Form<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"exampleCheckbox4"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleCheckbox4"</span><span class="nt">&gt;</span>Deploy your application in the cloud<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Collection as check boxes example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleInputFriends"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Friends<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"number"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exampleInputFriends"</span> <span class="na">placeholder=</span><span class="s">"Number of Friends"</span> <span class="na">required</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Integer input example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"exampleRangeMood"</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Mood<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"range"</span> <span class="na">class=</span><span class="s">"form-control-range"</span> <span class="na">id=</span><span class="s">"exampleRangeMood"</span> <span class="na">required</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Integer range example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>Awake<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-flex flex-row justify-content-between align-items-center"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputTimeHour"</span> <span class="na">class=</span><span class="s">"form-control mr-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"00"</span><span class="nt">&gt;</span>00<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"01"</span><span class="nt">&gt;</span>01<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"02"</span><span class="nt">&gt;</span>02<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"03"</span><span class="nt">&gt;</span>03<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"04"</span><span class="nt">&gt;</span>04<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"05"</span><span class="nt">&gt;</span>05<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"06"</span><span class="nt">&gt;</span>06<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"07"</span><span class="nt">&gt;</span>07<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"08"</span><span class="nt">&gt;</span>08<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"09"</span><span class="nt">&gt;</span>09<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"11"</span><span class="nt">&gt;</span>11<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"12"</span><span class="nt">&gt;</span>12<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"13"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"14"</span><span class="nt">&gt;</span>14<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"15"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"16"</span><span class="nt">&gt;</span>16<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"17"</span><span class="nt">&gt;</span>17<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"18"</span><span class="nt">&gt;</span>18<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"19"</span><span class="nt">&gt;</span>19<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"20"</span><span class="nt">&gt;</span>20<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"21"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"22"</span><span class="nt">&gt;</span>22<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"23"</span><span class="nt">&gt;</span>23<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+        :
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputTimeMinute"</span> <span class="na">class=</span><span class="s">"form-control ml-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"00"</span><span class="nt">&gt;</span>00<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"30"</span><span class="nt">&gt;</span>30<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Please provide a valid value.<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Time multi select example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label"</span><span class="nt">&gt;</span>First kiss<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"d-flex flex-row justify-content-between align-items-center"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDatetimeYear"</span> <span class="na">class=</span><span class="s">"form-control mr-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2013"</span><span class="nt">&gt;</span>2013<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2014"</span><span class="nt">&gt;</span>2014<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2015"</span><span class="nt">&gt;</span>2015<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2016"</span><span class="nt">&gt;</span>2016<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2017"</span><span class="nt">&gt;</span>2017<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2018"</span><span class="nt">&gt;</span>2018<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2019"</span><span class="nt">&gt;</span>2019<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2020"</span><span class="nt">&gt;</span>2020<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2021"</span><span class="nt">&gt;</span>2021<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2022"</span><span class="nt">&gt;</span>2022<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2023"</span><span class="nt">&gt;</span>2023<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDatetimeMonth"</span> <span class="na">class=</span><span class="s">"form-control mx-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>January<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>February<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>March<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"4"</span><span class="nt">&gt;</span>April<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"5"</span><span class="nt">&gt;</span>May<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"6"</span><span class="nt">&gt;</span>June<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"7"</span><span class="nt">&gt;</span>July<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8"</span><span class="nt">&gt;</span>August<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"9"</span><span class="nt">&gt;</span>September<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>October<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"11"</span><span class="nt">&gt;</span>November<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"12"</span><span class="nt">&gt;</span>December<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDatetimeDay"</span> <span class="na">class=</span><span class="s">"form-control mx-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>2<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>3<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"4"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"5"</span><span class="nt">&gt;</span>5<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"6"</span><span class="nt">&gt;</span>6<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"7"</span><span class="nt">&gt;</span>7<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"8"</span><span class="nt">&gt;</span>8<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"9"</span><span class="nt">&gt;</span>9<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"11"</span><span class="nt">&gt;</span>11<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"12"</span><span class="nt">&gt;</span>12<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"13"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"14"</span><span class="nt">&gt;</span>14<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"15"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"16"</span><span class="nt">&gt;</span>16<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"17"</span><span class="nt">&gt;</span>17<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"18"</span><span class="nt">&gt;</span>18<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"19"</span><span class="nt">&gt;</span>19<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"20"</span><span class="nt">&gt;</span>20<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"21"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"22"</span><span class="nt">&gt;</span>22<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"23"</span><span class="nt">&gt;</span>23<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"24"</span><span class="nt">&gt;</span>24<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"25"</span><span class="nt">&gt;</span>25<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"26"</span><span class="nt">&gt;</span>26<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"27"</span><span class="nt">&gt;</span>27<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"28"</span><span class="nt">&gt;</span>28<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"29"</span><span class="nt">&gt;</span>29<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"30"</span><span class="nt">&gt;</span>30<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"31"</span><span class="nt">&gt;</span>31<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+        —
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDatetimeHour"</span> <span class="na">class=</span><span class="s">"form-control mx-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"00"</span><span class="nt">&gt;</span>00<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"01"</span><span class="nt">&gt;</span>01<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"02"</span><span class="nt">&gt;</span>02<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"03"</span><span class="nt">&gt;</span>03<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"04"</span><span class="nt">&gt;</span>04<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"05"</span><span class="nt">&gt;</span>05<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"06"</span><span class="nt">&gt;</span>06<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"07"</span><span class="nt">&gt;</span>07<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"08"</span><span class="nt">&gt;</span>08<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"09"</span><span class="nt">&gt;</span>09<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"10"</span><span class="nt">&gt;</span>10<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"11"</span><span class="nt">&gt;</span>11<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"12"</span><span class="nt">&gt;</span>12<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"13"</span><span class="nt">&gt;</span>13<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"14"</span><span class="nt">&gt;</span>14<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"15"</span><span class="nt">&gt;</span>15<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"16"</span><span class="nt">&gt;</span>16<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"17"</span><span class="nt">&gt;</span>17<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"18"</span><span class="nt">&gt;</span>18<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"19"</span><span class="nt">&gt;</span>19<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"20"</span><span class="nt">&gt;</span>20<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"21"</span><span class="nt">&gt;</span>21<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"22"</span><span class="nt">&gt;</span>22<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"23"</span><span class="nt">&gt;</span>23<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+        :
+        <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"exampleInputDatetimeMinute"</span> <span class="na">class=</span><span class="s">"form-control ml-1"</span> <span class="na">required</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option&gt;&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"00"</span><span class="nt">&gt;</span>00<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"30"</span><span class="nt">&gt;</span>30<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Datetime multi select example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"col-sm-3 col-form-label pt-0"</span><span class="nt">&gt;</span>Active<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleBooleanRadio"</span> <span class="na">id=</span><span class="s">"exampleBooleanRadioYes"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleBooleanRadioYes"</span><span class="nt">&gt;</span>Yes<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"exampleBooleanRadio"</span> <span class="na">id=</span><span class="s">"exampleBooleanRadioNo"</span> <span class="na">value=</span><span class="s">"red"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleBooleanRadioNO"</span><span class="nt">&gt;</span>No<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Terms must be accepted<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Boolean as radio button example<span class="nt">&lt;/small&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9 offset-sm-3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-check"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-check-input"</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"exampleCheckTerms"</span> <span class="na">required</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-check-label"</span> <span class="na">for=</span><span class="s">"exampleCheckTerms"</span><span class="nt">&gt;</span>Terms<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"invalid-feedback"</span><span class="nt">&gt;</span>Terms must be accepted<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"valid-feedback"</span><span class="nt">&gt;</span>Looks good!<span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;small</span> <span class="na">class=</span><span class="s">"form-text text-muted"</span><span class="nt">&gt;</span>Boolean as check box example<span class="nt">&lt;/small&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row mb-0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9 offset-sm-3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Create User!<span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="na">class=</span><span class="s">"btn btn-outline-secondary"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="modal-simpleform" class="modal fade" tabindex="-1" role="dialog" aria_hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Simple Form Source</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="language-erb highlighter-rouge"><div class="highlight"><pre class="highlight p-4 mb-0"><code><span class="cp">&lt;%=</span> <span class="n">simple_form_for</span> <span class="vi">@user</span><span class="p">,</span> <span class="ss">url: </span><span class="n">examples_horizontal_path</span><span class="p">,</span>
+  <span class="ss">wrapper: :horizontal_form</span><span class="p">,</span>
+  <span class="ss">wrapper_mappings: </span><span class="p">{</span>
+    <span class="ss">boolean:       :horizontal_boolean</span><span class="p">,</span>
+    <span class="ss">check_boxes:   :horizontal_collection</span><span class="p">,</span>
+    <span class="ss">date:          :horizontal_multi_select</span><span class="p">,</span>
+    <span class="ss">datetime:      :horizontal_multi_select</span><span class="p">,</span>
+    <span class="ss">file:          :horizontal_file</span><span class="p">,</span>
+    <span class="ss">radio_buttons: :horizontal_collection</span><span class="p">,</span>
+    <span class="ss">range:         :horizontal_range</span><span class="p">,</span>
+    <span class="ss">time:          :horizontal_multi_select</span>
+  <span class="p">}</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">error_notification</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:name</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">input_html: </span><span class="p">{</span> <span class="ss">autocomplete: </span><span class="s1">'email'</span> <span class="p">}</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:password</span><span class="p">,</span> <span class="ss">input_html: </span><span class="p">{</span> <span class="ss">autocomplete: </span><span class="s1">'current-password'</span> <span class="p">}</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:avatar</span><span class="p">,</span> <span class="ss">as: :file</span><span class="p">,</span> <span class="ss">input_html: </span><span class="p">{</span> <span class="ss">accept: </span><span class="no">User</span><span class="o">::</span><span class="no">AVATAR</span> <span class="p">}</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:bio</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:birthday</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:color</span><span class="p">,</span> <span class="ss">as: :radio_buttons</span><span class="p">,</span> <span class="ss">collection: </span><span class="no">User</span><span class="o">::</span><span class="no">COLOR</span><span class="p">,</span> <span class="ss">wrapper: :horizontal_collection_inline</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:fruit</span><span class="p">,</span> <span class="ss">as: :check_boxes</span><span class="p">,</span> <span class="ss">collection: </span><span class="no">User</span><span class="o">::</span><span class="no">FRUIT</span><span class="p">,</span> <span class="ss">wrapper: :horizontal_collection_inline</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:music</span><span class="p">,</span> <span class="ss">collection: </span><span class="no">User</span><span class="o">::</span><span class="no">MUSIC</span><span class="p">,</span> <span class="ss">input_html: </span><span class="p">{</span> <span class="ss">multiple: </span><span class="kp">true</span> <span class="p">}</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:language</span><span class="p">,</span> <span class="ss">collection: </span><span class="no">User</span><span class="o">::</span><span class="no">LANGUAGE</span><span class="p">,</span> <span class="ss">prompt: :translate</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:pill</span><span class="p">,</span> <span class="ss">as: :radio_buttons</span><span class="p">,</span> <span class="ss">collection: </span><span class="no">User</span><span class="o">::</span><span class="no">PILL</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:choises</span><span class="p">,</span> <span class="ss">as: :check_boxes</span><span class="p">,</span> <span class="ss">collection: </span><span class="no">User</span><span class="o">::</span><span class="no">CHOISES</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:friends</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:mood</span><span class="p">,</span> <span class="ss">as: :range</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:awake</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:first_kiss</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:active</span><span class="p">,</span> <span class="ss">as: :radio_buttons</span> <span class="cp">%&gt;</span>
+
+  <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">input</span> <span class="ss">:terms</span> <span class="cp">%&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group row mb-0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9 offset-sm-3"</span><span class="nt">&gt;</span>
+      <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">button</span> <span class="ss">:submit</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"btn-primary"</span> <span class="cp">%&gt;</span>
+      <span class="cp">&lt;%=</span> <span class="n">f</span><span class="p">.</span><span class="nf">button</span> <span class="ss">:button</span><span class="p">,</span> <span class="s2">"Cancel"</span><span class="p">,</span> <span class="ss">type: </span><span class="s2">"reset"</span><span class="p">,</span> <span class="ss">class: </span><span class="s2">"btn-outline-secondary"</span> <span class="cp">%&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span>
+</code></pre></div></div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+    <footer class="app-footer text-center">
+  <div class="container">
+    <p>Copyright 2009-2019 <a href="http://plataformatec.com.br/">Plataformatec</a></p>
+    <ul class="footer-links">
+      <li><a href="http://blog.plataformatec.com.br/">Plataformatec Blog</a></li>
+      <li class="muted">·</li>
+      <li><a href="https://github.com/plataformatec/simple_form">Simple Form @ GitHub</a></li>
+    </ul>
+  </div>
+</footer>
+
+    <script src="./Example Rails application with SimpleForm and Bootstrap_files/application-26c15a6b963fe1a00af25a1c87db8e8d256341b1ffbcd9eaa3201eb04e2ffc15.js"></script>
+
+</body></html>

@@ -11,6 +11,7 @@ class BooksController < ApplicationController
       @books = @books.search_title(params[:term]).where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 6)
     end
     @categories = Category.pluck(:name, :id)
+    
   end
 
   def new
@@ -23,18 +24,28 @@ class BooksController < ApplicationController
     @reviews = @book.reviews.page(params[:page]).per(3).order(created_at: :desc)
     respond_to do |format|
       format.html # index.html.erb
-      format.json {render :json => @review}
+      format.json { render json: @review }
       format.js
       format.xml
-   end
+    end
   end
 
   def update
-    if @book.update(book_params)
-      redirect_to book_path(@book)
-    else
-      @categories = Category.all.map { |c| [c.name, c.id] }
-      render :edit
+    # if @book.update(book_params)
+    #   redirect_to book_path(@book)
+    # else
+    #   @categories = Category.all.map { |c| [c.name, c.id] }
+    #   render :edit
+    # end
+    respond_to do |format|
+      if @book.update(book_params)
+        format.json { head :no_content }
+        format.js
+      else
+        format.json { render json: @book.errors.full_messages,
+                                   status: :unprocessable_entity }
+      end
+     
     end
   end
 
@@ -52,13 +63,14 @@ class BooksController < ApplicationController
       render :new
     end
     respond_to do |format|
-      if @review.save
-        format.html { redirect_to(book_path(@book)) }
+      if @book.save
+        format.json { head :no_content }
         format.js
       else
-        format.html { redirect_back(fallback_location: root_path) }
-        format.js
+        format.json { render json: @book.errors.full_messages, 
+                            status: :unprocessable_entity }
       end
+      
     end
   end
 

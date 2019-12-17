@@ -16,6 +16,7 @@
 //= require zoom.min.js
 //= require jquery.raty.js
 
+
 var options = [];
 
 $( '.dropdown-menu a' ).on( 'click', function( event ) {

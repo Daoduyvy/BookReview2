@@ -1,0 +1,25 @@
+
+  <div class = "col-md-4" style="margin-top: 2%;" >
+    <%= image_tag @book.book_img.url(:book_index),'data-action': "zoom"%>
+    <h2><%= @book.title %></h2>
+    <h3><%= @book.publish_date %></h3>
+    <h3><%= @book.author %></h3>
+    <h3><%= @book.category.name %></h3>
+  </div>
+  <div class="row">
+  <div class = "col-md-6" >
+    <h3 style="font-size:15px;float: right;"><%= @book.description %></h3>
+  </div>
+</div>
+<div class="row" style="padding-top:2%">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-10">
+    <%= render 'admin/reviews/form' %>
+    <h2>Comment</h2>
+    <div class="rv" style="min-width:<%= @width %>px">
+      <%= render 'admin/reviews/review' %>
+      <%= link_to_next_page @reviews, 'Load More', remote: true, id: "load_more_link" %>
+    </div>
+  </div>
+</div>
