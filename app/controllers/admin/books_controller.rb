@@ -2,43 +2,36 @@
 
 class Admin::BooksController < Admin::BaseController
   layout 'admin'
-  
+  before_action :set_locale
   before_action :find_book, only: %i[show edit update destroy]
-  WillPaginate.per_page = 10
-  
+
   def index
     @page = (params[:page] || 0).to_i
     @book = current_user.books.build
-    @books = Book.paginate(page: params[:page]).order(created_at: :desc)
-    if params[:term].present?
-      @books = @books.search_title(params[:term]).where(category_id: params[:category_id]).paginate(page: params[:page])
-    end
+    @books = Book.order(created_at: :desc).paginate(page: params[:page])
+    @books = @books.search_title(params[:term]).where(category_id: params[:category_id]) if params[:category_id].present?
+    @books = @books.search_title(params[:term])if params[:term].present?
     @categories = Category.pluck(:name, :id)
-
     respond_to do |format|
-      format.html 
-      format.json {render :json => @book}
+      format.html
       format.js
-   end
+    end
   end
 
   def show
     @users = User.all.order(created_at: :desc)
     @reviews = @book.reviews.page(params[:page]).per(3).order(created_at: :desc)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json {render :json => @review}
-      format.js
-      format.xml
-   end
   end
 
   def update
-    if @book.update(book_params)
-      redirect_to admin_books_path
-    else
-      @categories = Category.all.map { |c| [c.name, c.id] }
-      render :edit
+    @book = Book.find(params[:id])
+    respond_to do |format|
+      if @book.update(book_params)
+        format.js
+      else
+        format.js { render js: @book.errors.full_messages,
+                             status: :unprocessable_entity }
+      end
     end
   end
 
@@ -48,17 +41,23 @@ class Admin::BooksController < Admin::BaseController
 
   def create
     @book = current_user.books.build(book_params)
-    if @book.save
-      redirect_to admin_books_path
-    else
-      @categories = Category.all.map { |c| [c.name, c.id] }
+    @book.category_id = params[:category_id]
+
+    respond_to do |format|
+      if @book.save
+        format.js
+      else
+        format.js { render js: @book.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
     @book.reviews.destroy_all
     @book.destroy
-    redirect_to admin_books_path
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

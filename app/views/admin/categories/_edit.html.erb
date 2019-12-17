@@ -1,0 +1,23 @@
+  <!-- Edit Modal HTML -->
+  <div id="editCategoryModal_<%= category.id %>" class="modal fade edit-modal-category">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Category</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [:admin, category], remote: true, method: :PATCH,
+                              :html => {:multipart => true} do |f| %>
+            <%= f.input :name, input_html: {value: f.object.name || category.name, id: category.id,
+                                            class: "edit-category-name", },
+                        as: :text %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <%= f.button :submit, class: "edit-category" %>
+            </div>
+          <% end %>
+          </div>
+    </div>
+  </div>
