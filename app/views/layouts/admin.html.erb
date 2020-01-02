@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Admin</title>
-    <%= csrf_meta_tags %>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <% # Optionally use admin-specific assets here instead of the normal application assets %>
-    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %> <%= favicon_link_tag asset_path('favicon.ico') %>
-  </head>
-  <body>
-    <%= render 'layouts/header_admin' %>
-    <%= render 'layouts/menu_admin' %>
-    <%= yield %>
-  </body>
+<head>
+  <title>Admin</title>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="authenticity-token" content="<%= form_authenticity_token %>"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" %>
+  <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js" %>
+  <% # Optionally use admin-specific assets here instead of the normal application assets %>
+  <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload', async: true %> <%= favicon_link_tag asset_path('favicon.ico') %>
+  <%= custom_bootstrap_flash %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</head>
+<body>
+<%= render 'layouts/header_admin' %>
+<%= render 'layouts/menu_admin' %>
+<%= render  "layouts/flash_messages", flash: flash %>
+<%= yield %>
+</body>
 </html>

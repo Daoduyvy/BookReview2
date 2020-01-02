@@ -6,12 +6,11 @@ class BooksController < ApplicationController
 
   def index
     @page = (params[:page] || 0).to_i
-    @books = Book.paginate(page: params[:page], per_page: 6).order(created_at: :desc)
-    if params[:term].present?
-      @books = @books.search_title(params[:term]).where(category_id: params[:category_id]).paginate(page: params[:page], per_page: 6)
-    end
+    @books = Book.order(created_at: :desc).paginate(page: params[:page])
+    @books = @books.search_title(params[:term]).where(category_id: params[:category_id]).paginate(page: params[:page])  if params[:term].present?
     @categories = Category.pluck(:name, :id)
-    
+
+
   end
 
   def new
@@ -21,32 +20,28 @@ class BooksController < ApplicationController
 
   def show
     @users = User.all.order(created_at: :desc)
-    @reviews = @book.reviews.page(params[:page]).per(3).order(created_at: :desc)
+    @reviews = @book.reviews..order(created_at: :desc).page(params[:page])
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @review }
       format.js
-      format.xml
     end
   end
 
   def update
-    # if @book.update(book_params)
-    #   redirect_to book_path(@book)
-    # else
-    #   @categories = Category.all.map { |c| [c.name, c.id] }
-    #   render :edit
-    # end
-    respond_to do |format|
+    if @book.update(book_params)
+      redirect_to book_path(@book)
+    else
+      @categories = Category.all.map { |c| [c.name, c.id] }
+      render :edit
+    end
+    respond_to { |format|
       if @book.update(book_params)
-        format.json { head :no_content }
         format.js
       else
-        format.json { render json: @book.errors.full_messages,
-                                   status: :unprocessable_entity }
+        format.js { render json: @book.errors.full_messages,
+                             status: :unprocessable_entity }
       end
-     
-    end
+
+    }
   end
 
   def edit
@@ -56,21 +51,12 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.build(book_params)
     @book.category_id = params[:category_id]
+
     if @book.save
       redirect_to root_path
     else
       @categories = Category.all.map { |c| [c.name, c.id] }
       render :new
-    end
-    respond_to do |format|
-      if @book.save
-        format.json { head :no_content }
-        format.js
-      else
-        format.json { render json: @book.errors.full_messages, 
-                            status: :unprocessable_entity }
-      end
-      
     end
   end
 
@@ -79,6 +65,7 @@ class BooksController < ApplicationController
     @book.destroy
     redirect_to root_path
   end
+
 
   private
 

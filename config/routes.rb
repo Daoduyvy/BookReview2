@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
-  namespace :admin do
+    namespace :admin do
     get '', to: 'base#index', as: '/'
     resources :users
     resources :categories

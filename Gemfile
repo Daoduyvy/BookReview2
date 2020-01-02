@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.6.5'
 
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.3'
@@ -26,7 +26,10 @@ gem "font-awesome-rails"
 gem 'carrierwave'
 gem 'kaminari'
 gem "cancancan"
-gem 'bootstrap_sb_admin_base_v2'
+gem 'rack','>= 2.0.8'
+gem 'faker'
+gem 'rails-i18n'
+gem 'flag-icons-rails'
 # gem 'redis', '~> 4.0' q
 # gem 'bcrypt', '~> 3.1.7'
 
