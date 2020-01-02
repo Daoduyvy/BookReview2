@@ -1,4 +1,3 @@
-<tr id="book<%= book.id %>">
   <td>
     <span class="custom-checkbox">
       <input type="checkbox" name="options[]" value="1">
@@ -13,7 +12,6 @@
   <td><%= book.category.name%></td>
   <td><%= book.publish_date %></td>
   <td>
-    <a href="#editBookModal" class="edit"data-target="#editBookModal_<%= book.id %>" data-toggle="modal"  %><i class="material-icons" data-toggle="tooltip"title="Edit">&#xE254;</i></a>
-     <a href="#deleteBookModal_<%= book.id %>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+    <a href="#editBookModal_<%= book.id %>" class="edit" data-toggle="modal"  %><i class="material-icons" data-toggle="tooltip"title="Edit">&#xE254;</i></a>
+    <a href="#deleteBookModal_<%= book.id %>" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
   </td>
-</tr>

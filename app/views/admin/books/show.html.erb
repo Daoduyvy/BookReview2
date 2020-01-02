@@ -1,10 +1,10 @@
 
-  <div class = "col-md-4" style="margin-top: 2%;" >
+  <div class = "col-md-4" >
     <%= image_tag @book.book_img.url(:book_index),'data-action': "zoom"%>
     <h2><%= @book.title %></h2>
     <h3><%= @book.publish_date %></h3>
     <h3><%= @book.author %></h3>
-    <h3><%= @book.category.name %></h3>
+    <h3><%= @book.category %></h3>
   </div>
   <div class="row">
   <div class = "col-md-6" >

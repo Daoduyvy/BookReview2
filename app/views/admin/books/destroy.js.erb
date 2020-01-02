@@ -1,0 +1,4 @@
+$('.admin_delete').bind('ajax:success', function () {
+      toastr.error('Book destroyed','Book Destroy')
+      $(this).closest('tr').fadeOut();
+});

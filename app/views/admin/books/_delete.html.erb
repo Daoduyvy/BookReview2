@@ -1,21 +1,20 @@
-               <!-- Delete Modal HTML -->
-                <div id="deleteBookModal" class="modal fade">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h4 class="modal-title">Delete Book</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      </div>
-                      <div class="modal-body">
-                        <p>Are you sure you want to delete these Books?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
-                      </div>
-                      <div class="modal-footer">
-                        <%= simple_form_for [:admin,book] , method: :delete do |f| %>
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <%= f.button(:submit, {value: "Delete Book", class: 'btn btn-primary', method: 'delete'}) %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<!-- Delete Modal HTML -->
+<div id="deleteBookModal_<%= book.id %>" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Delete Book</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete these Books?</p>
+        <p class="text-warning"><small>This action cannot be undone.</small></p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Destroy', [:admin, book], method: :delete,
+                    remote: true, class: 'admin_delete',
+                    data: {toggle: "modal", dismiss: "modal", target: "#modal"} %>
+      </div>
+    </div>
+  </div>
+</div>

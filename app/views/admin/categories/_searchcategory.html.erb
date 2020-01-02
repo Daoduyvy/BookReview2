@@ -1,0 +1,48 @@
+<div class="table-wrapper" id="category-table">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>
+      <span class="custom-checkbox">
+        <input type="checkbox" id="selectAll">
+        <label for="selectAll"></label>
+      </span>
+      </th>
+      <th>Category</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="categories">
+    <%= render 'admin/categories/add' %>
+    <% @categories.each do |category| %>
+      <tr id="category<%= category.id %>">
+        <td>
+                  <span class="custom-checkbox">
+                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                    <label for="checkbox1"></label>
+                  </span>
+        </td>
+        <td><%= category.name %></td>
+        <td>
+          <a href="#editCategoryModal_<%= category.id %>" class="edit" data-toggle="modal" s>
+            <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+          </a>
+          <a href="#deleteCategoryModal_<%= category.id %>" class="delete" data-toggle="modal">
+            <i class="material-icons" data-toggle="tooltip" title="Delete" class="delete-category">&#xE872;</i>
+          </a>
+          <%= render 'admin/categories/delete', category: category %>
+        </td>
+      <tr>
+        <%= render 'admin/categories/edit', category: category %>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="clearfix">
+  <div class="hint-text"> <%= page_entries_info @categories %></div>
+  <ul class="pagination" id="ok">
+    <div class="digg_pagination">
+      <%= will_paginate @categories, :container => false, remote: true %>
+    </div>
+  </ul>
+</div>
