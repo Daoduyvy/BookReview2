@@ -1,0 +1,3 @@
+$('#category-table').remove();
+$('#search-results').html('<%= escape_javascript(render('admin/categories/searchcategory', categories:  @categories)) %>');
+toastr.success('Searched','Search')

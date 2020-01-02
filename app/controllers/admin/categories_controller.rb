@@ -1,36 +1,51 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::BaseController
   layout 'admin'
-  before_action :find_category, only: %i[show edit]
-
-  def new
-    @categories = Category.new
-  end
+  protect_from_forgery with: :exception
+  before_action :set_locale
+  before_action :find_category, only: %i[show edit destroy update ]
 
   def index
     @category = Category.new
-    @categories = Category.paginate(page: params[:page], per_page: 3).order(created_at: :desc)
-    if params[:term].present?
-      @categories = @categories.search_name(params[:term]).paginate(page: params[:page], per_page: 6)
+    @categories = Category.order(created_at: :desc).paginate(page: params[:page])
+    @categories = Category.search_name(params[:term]).order(created_at: :desc).paginate(page: params[:page]) if params[:term].present?
+    respond_to do |format|
+      format.html
+      format.js {}
     end
   end
 
   def create
     @category = Category.new(category_params)
-    if @category.save
-      redirect_to admin_categories_path
-    else
-      render :new
+    respond_to do |format|
+      if @category.save
+        format.js
+      else
+        format.js { render js: @category.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  def show; end
+  def show;
+  end
 
-  def edit; end
+  def edit;
+  end
 
   def update
-    if @category.update(category_params)
-      redirect_to book_path(@book)
+    respond_to do |format|
+      if @category.update(category_params)
+        format.js
+      else
+        format.js { render js: @category.errors, status: :unprocessable_entity }
+      end
     end
+  end
+
+  def destroy
+    @category.destroy
+    respond_to { |format|
+      format.js
+    }
   end
 
   private

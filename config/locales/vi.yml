@@ -1,0 +1,31 @@
+vi:
+  admin:
+    books:
+      tittle: "Trang chủ"
+      search: "Tìm kiếm"
+      add-book: "Tạo Mới Sách"
+      book: "Sách"
+      category: "Danh mục"
+      user: "Người dùng"
+      review: "Đánh giá"
+      dasboard: "Bảng Điều Khiển"
+      link: "Đường dẫn"
+      manager: "Quản lý"
+      image: "Hình ảnh"
+      name: "Tiêu đề"
+      author: "Tác giả"
+      publish_date: "Ngày xuất bản"
+      action: "Sửa/Xóa"
+      chart: "Đồ Thị"
+      line_chart: "Biểu Đồ Đường"
+      pie_chart: "Biểu Đồ Tròn"
+    categories:
+      category: "Danh mục"
+      action: "Sửa/Xóa"
+      manager: "Quản Lý"
+      add-category: "Tạo Mới Danh Mục"
+
+  will_paginate:
+    previous_label: "Trang Trước"
+    next_label: "Trang Sau"
+    page_gap: "…"

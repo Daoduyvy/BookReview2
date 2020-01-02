@@ -1,0 +1,22 @@
+<!-- Add Modal HTML -->
+<div id="addUserModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add New Book</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [:admin, @user], remote: true, method: :post, :html => {:multipart => true} do |f| %>
+          <%= f.input :email %>
+          <%= f.input :password_field, as: :password %>
+          <%= f.check_box :admin , class: "form-group"  %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+$('#book-table').remove();
+$('#book-search-results').html('<%= escape_javascript(render('admin/books/searchbook', books:  @books)) %>');
+toastr.success('searched','Search Book')
