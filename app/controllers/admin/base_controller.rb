@@ -3,13 +3,14 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_admin!, :set_locale
 
   def index
-    @book = Book.new
-    @users = User.all
-    @books = Book.paginate(page: params[:page], per_page: 2).order(created_at: :desc)
-    @categories = Category.pluck(:name, :id)
-  end
 
-  private
+    @users = User.all
+    @books = Book.all
+    @reviews = Review.all
+    @categories = Category.all
+    @book_by_month = Book.group_by_month_of_year(:created_at, format: "%B %d, %Y").count
+    @book_by_category= Category.all.map{|c| [c.name , Book.where(category_id: c.id).count] }
+  end
 
   def set_locale
     I18n.default_locale = :en
