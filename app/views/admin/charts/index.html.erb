@@ -1,0 +1,24 @@
+<div class="container-fluid main-container">
+  <div class="col-md-10 content">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-sm-3">
+            <h2><%= I18n.t("admin.books.manager")%> <b><%= I18n.t("admin.books.chart")%> </b></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="col-md-6">
+        <h2><%= I18n.t("admin.books.line_chart") %> <b><%= I18n.t("admin.books.book") %> </b></h2>
+        <%= line_chart @book_by_month %>
+      </div>
+
+      <div class="col-md-6"><e></e>
+        <h2><%= I18n.t("admin.books.pie_chart") %> <b><%=I18n.t("admin.books.category") %> </b></h2>
+        <%= pie_chart @book_by_category %>
+      </div>
+    </div>
+  </div>
+</div>

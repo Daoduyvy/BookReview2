@@ -51,6 +51,9 @@ en:
       publish_date: "Publish Date"
       action: "Action"
       link: "Link"
+      chart: "Chart"
+      line_chart: "Line Chart"
+      pie_chart: "Pie Chart"
     categories:
       category: "Category"
       action: "Action"

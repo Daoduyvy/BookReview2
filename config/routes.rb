@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :admin do
     get '', to: 'base#index', as: '/'
     resources :users
+    resources :charts, only: %i[index]
     resources :categories
     resources :books do
       resources :reviews

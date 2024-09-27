@@ -30,6 +30,8 @@ gem 'rack','>= 2.0.8'
 gem 'faker'
 gem 'rails-i18n'
 gem 'flag-icons-rails'
+gem 'chartkick'
+gem 'groupdate'
 # gem 'redis', '~> 4.0' q
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -4,4 +4,14 @@ class BaseModel < ActiveRecord::Base
   scope :search_title, -> (title) { where('title like ?', "%#{title}%")}
   scope :search_name, -> (name) { where('name like ?', "%#{name}%")}
   scope :search_by_email, -> (title) { where('email like ?', "%#{title}%")}
+  scope :group_by_type, -> (type) {
+    case type
+    when type = "week"
+      group("DATE_FORMAT(activated_at,'%v-%x')").count
+    when type = "month"
+      group("DATE_FORMAT(activated_at,'%b-%x')").count
+    when type = "year"
+      group("DATE_FORMAT(activated_at,'%x')").count
+    end
+  }
 end

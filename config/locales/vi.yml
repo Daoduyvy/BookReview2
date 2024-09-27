@@ -16,6 +16,9 @@ vi:
       author: "Tác giả"
       publish_date: "Ngày xuất bản"
       action: "Sửa/Xóa"
+      chart: "Đồ Thị"
+      line_chart: "Biểu Đồ Đường"
+      pie_chart: "Biểu Đồ Tròn"
     categories:
       category: "Danh mục"
       action: "Sửa/Xóa"
